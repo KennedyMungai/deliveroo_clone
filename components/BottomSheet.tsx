@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
 	},
 	toggleActive: {
 		backgroundColor: Colors.primary,
-		borderRadius: 10
+		borderRadius: 32
 	},
 	toggleInactive: {},
 	deliveryText: {
