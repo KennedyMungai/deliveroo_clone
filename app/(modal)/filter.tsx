@@ -14,7 +14,7 @@ const FilterModal = () => {
 			<Text>Filter</Text>
 			<View style={styles.footer}>
 				<TouchableOpacity style={styles.fullButton}>
-					<Text>Done</Text>
+					<Text style={styles.footerText}>Done</Text>
 				</TouchableOpacity>
 			</View>
 		</SafeAreaView>
@@ -43,5 +43,10 @@ const styles = StyleSheet.create({
 		margin: 16,
 		borderRadius: 4,
 		alignItems: 'center'
+	},
+	footerText: {
+		color: 'white',
+		fontWeight: 'bold',
+		fontSize: 18
 	}
 })
