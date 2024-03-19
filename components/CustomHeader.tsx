@@ -32,7 +32,9 @@ const styles = StyleSheet.create({
 	},
 	container: {
 		height: 150,
-		marginTop: 50
+		marginTop: 50,
+		alignItems: 'center',
+		justifyContent: 'center'
 	},
 	bike: {
 		width: 30,
