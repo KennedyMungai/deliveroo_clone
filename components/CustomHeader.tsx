@@ -21,7 +21,7 @@ const CustomHeader = () => {
 					/>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.titleContainer}>
-					<Text>Home</Text>
+					<Text style={styles.title}>Delivery . Now</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.profileButton}>
 					<Ionicons
@@ -60,5 +60,10 @@ const styles = StyleSheet.create({
 	titleContainer: {
 		flex: 1
 	},
-	profileButton: {}
+	profileButton: {},
+	title: {
+		fontSize: 14,
+		fontWeight: 'bold',
+		color: Colors.medium
+	}
 })
