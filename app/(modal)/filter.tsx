@@ -40,7 +40,11 @@ const styles = StyleSheet.create({
 		elevation: 10,
 		shadowColor: 'black',
 		shadowOpacity: 0.1,
-		shadowRadius: 10
+		shadowRadius: 10,
+		shadowOffset: {
+			width: 0,
+			height: -10
+		}
 	},
 	fullButton: {
 		backgroundColor: Colors.primary,
