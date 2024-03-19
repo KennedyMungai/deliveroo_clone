@@ -6,7 +6,11 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 	const snapPoints = useMemo(() => ['50%'], [])
 
 	return (
-		<BottomSheetModal snapPoints={snapPoints} ref={ref}>
+		<BottomSheetModal
+			snapPoints={snapPoints}
+			ref={ref}
+			overDragResistanceFactor={0}
+		>
 			<View>
 				<Text>BottomSheet</Text>
 			</View>
