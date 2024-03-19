@@ -40,15 +40,16 @@ export default CustomHeader
 const styles = StyleSheet.create({
 	safeArea: {
 		flex: 1,
-		backgroundColor: '#FFF',
-		paddingHorizontal: 10
+		backgroundColor: '#FFF'
 	},
 	container: {
 		height: 150,
 		// marginTop: 50,
+		backgroundColor: 'white',
 		display: 'flex',
 		flexDirection: 'row',
 		alignItems: 'center',
+		paddingHorizontal: 10,
 		justifyContent: 'space-between',
 		gap: 20
 	},
