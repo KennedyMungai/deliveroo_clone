@@ -19,7 +19,8 @@ const MainAppLayout = () => {
 							presentation: 'modal',
 							animation: 'slide_from_bottom',
 							headerTitle: 'Label',
-							headerShadowVisible: false
+							headerShadowVisible: false,
+							headerTransparent: true
 						}}
 					/>
 				</Stack>
