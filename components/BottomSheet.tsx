@@ -77,12 +77,14 @@ const styles = StyleSheet.create({
 	},
 	toggleActive: {
 		backgroundColor: Colors.primary,
-		borderRadius: 32
+		borderRadius: 32,
+		paddingHorizontal: 30
 	},
 	toggleInactive: {},
 	deliveryText: {
 		fontWeight: '700',
-		padding: 10
+		padding: 10,
+		color: Colors.primary
 	},
 	activeDeliveryText: {
 		fontWeight: '700',
