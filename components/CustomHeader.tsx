@@ -29,7 +29,7 @@ const SearchBar = () => (
 				<TouchableOpacity style={styles.optionButton}>
 					<Ionicons
 						name='options-outline'
-						size={20}
+						size={28}
 						color={Colors.primary}
 					/>
 				</TouchableOpacity>
