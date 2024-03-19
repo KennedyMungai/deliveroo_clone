@@ -12,12 +12,23 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
+import { Fontisto, Ionicons } from '@expo/vector-icons'
 
 interface SomeCategory {
 	name: string
 	count: number
 	checked?: boolean
 }
+
+const ItemBox = () => (
+	<View style={styles.itemContainer}>
+		<TouchableOpacity style={styles.item}>
+			<Fontisto name='arrow-swap' size={20} color={Colors.medium} />
+			<Text style={{ flex: 1 }}>Sort</Text>
+			<Ionicons name='chevron-forward' size={22} color={Colors.primary} />
+		</TouchableOpacity>
+	</View>
+)
 
 const FilterModal = () => {
 	const navigation = useNavigation()
@@ -34,6 +45,7 @@ const FilterModal = () => {
 				data={someCategories}
 				keyExtractor={(item) => item.name}
 				renderItem={renderItem}
+				ListHeaderComponent={<ItemBox />}
 			/>
 			<View style={styles.footer}>
 				<TouchableOpacity
@@ -82,5 +94,16 @@ const styles = StyleSheet.create({
 		color: 'white',
 		fontWeight: 'bold',
 		fontSize: 18
+	},
+	itemContainer: {},
+	item: {
+		flexDirection: 'row',
+		gap: 16,
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		paddingVertical: 8,
+		backgroundColor: 'white',
+		borderColor: Colors.grey,
+		borderBottomWidth: 1
 	}
 })
