@@ -99,6 +99,7 @@ const FilterModal = () => {
 				renderItem={renderItem}
 				showsVerticalScrollIndicator={false}
 				ListHeaderComponent={<ItemBox />}
+				style={{ marginBottom: 100 }}
 			/>
 			<View style={styles.footer}>
 				<TouchableOpacity
