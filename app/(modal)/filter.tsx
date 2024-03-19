@@ -2,6 +2,7 @@ import { categories } from '@/assets/data/home'
 import Colors from '@/constants/Colors'
 import { useNavigation } from 'expo-router'
 import React from 'react'
+import { someCategories } from '@/assets/data/filter'
 import {
 	FlatList,
 	ListRenderItem,
@@ -12,26 +13,26 @@ import {
 	View
 } from 'react-native'
 
-interface Category {
-	text: string
-	img: any
+interface SomeCategory {
+	name: string
+	count: number
 	checked?: boolean
 }
 
 const FilterModal = () => {
 	const navigation = useNavigation()
 
-	const renderItem: ListRenderItem<Category> = ({ item }) => (
+	const renderItem: ListRenderItem<SomeCategory> = ({ item }) => (
 		<View>
-			<Text>{item.text}</Text>
+			<Text>{item.name}</Text>
 		</View>
 	)
 
 	return (
 		<SafeAreaView style={styles.container}>
 			<FlatList
-				data={categories}
-				keyExtractor={(item) => item.text}
+				data={someCategories}
+				keyExtractor={(item) => item.name}
 				renderItem={renderItem}
 			/>
 			<View style={styles.footer}>
