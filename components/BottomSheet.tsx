@@ -37,6 +37,7 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 			overDragResistanceFactor={0}
 			backdropComponent={renderBackdrop}
 			backgroundStyle={{ backgroundColor: Colors.lightGrey }}
+			handleIndicatorStyle={{ display: 'none' }}
 		>
 			<View>
 				<TouchableOpacity
