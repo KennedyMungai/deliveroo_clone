@@ -1,10 +1,12 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 
 const CustomHeader = () => {
 	return (
-		<SafeAreaView style={styles.container}>
-			<Text>CustomHeader</Text>
+		<SafeAreaView style={styles.safeArea}>
+			<View style={styles.container}>
+				<Text>CustomHeader</Text>
+			</View>
 		</SafeAreaView>
 	)
 }
@@ -12,8 +14,9 @@ const CustomHeader = () => {
 export default CustomHeader
 
 const styles = StyleSheet.create({
+	safeArea: { flex: 1, backgroundColor: 'white' },
 	container: {
 		height: 150,
-		paddingTop: 50
+		marginTop: 50
 	}
 })
