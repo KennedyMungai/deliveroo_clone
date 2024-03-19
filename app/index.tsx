@@ -1,14 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const MainAppPage = () => {
 	return (
-		<View>
+		<SafeAreaView style={styles.container}>
 			<Text>MainAppPage</Text>
-		</View>
+		</SafeAreaView>
 	)
 }
 
 export default MainAppPage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	container: {
+		backgroundColor: 'white',
+		flex: 1
+	}
+})
