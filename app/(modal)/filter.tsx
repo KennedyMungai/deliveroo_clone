@@ -12,6 +12,7 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
+import BouncyCheckbox from 'react-native-bouncy-checkbox'
 
 interface SomeCategory {
 	name: string
@@ -86,9 +87,17 @@ const FilterModal = () => {
 	const navigation = useNavigation()
 
 	const renderItem: ListRenderItem<SomeCategory> = ({ item }) => (
-		<View style={styles.row}>
-			<Text>{item.name}</Text>
-		</View>
+		<>
+			<View style={styles.row}>
+				<Text>{item.name}</Text>
+				<BouncyCheckbox
+					isChecked={item.checked}
+					fillColor={Colors.primary}
+					onPress={() => {}}
+				/>
+			</View>
+			<View style={{ borderWidth: StyleSheet.hairlineWidth }} />
+		</>
 	)
 
 	return (
@@ -172,6 +181,7 @@ const styles = StyleSheet.create({
 	row: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		padding: 10
+		padding: 10,
+		justifyContent: 'space-between'
 	}
 })
