@@ -1,18 +1,18 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet'
-import React, { useMemo } from 'react'
+import React, { forwardRef, useMemo } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const BottomSheet = () => {
+const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 	const snapPoints = useMemo(() => ['50%'], [])
 
 	return (
-		<BottomSheetModal snapPoints={snapPoints}>
+		<BottomSheetModal snapPoints={snapPoints} ref={ref}>
 			<View>
 				<Text>BottomSheet</Text>
 			</View>
 		</BottomSheetModal>
 	)
-}
+})
 
 export default BottomSheet
 
