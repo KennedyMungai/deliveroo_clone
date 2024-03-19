@@ -16,6 +16,8 @@ export default FilterModal
 const styles = StyleSheet.create({
 	container: {
 		paddingTop: 100,
-		paddingHorizontal: 20
+		paddingHorizontal: 20,
+		backgroundColor: 'white',
+		flex: 1
 	}
 })
