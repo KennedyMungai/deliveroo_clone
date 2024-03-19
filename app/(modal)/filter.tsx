@@ -1,7 +1,10 @@
+import { categories } from '@/assets/data/home'
 import Colors from '@/constants/Colors'
 import { useNavigation } from 'expo-router'
 import React from 'react'
 import {
+	FlatList,
+	ListRenderItem,
 	SafeAreaView,
 	StyleSheet,
 	Text,
@@ -9,12 +12,28 @@ import {
 	View
 } from 'react-native'
 
+interface Category {
+	text: string
+	img: any
+	checked?: boolean
+}
+
 const FilterModal = () => {
 	const navigation = useNavigation()
 
+	const renderItem: ListRenderItem<Category> = ({ item }) => (
+		<View>
+			<Text>{item.text}</Text>
+		</View>
+	)
+
 	return (
 		<SafeAreaView style={styles.container}>
-			<Text>Filter</Text>
+			<FlatList
+				data={categories}
+				keyExtractor={(item) => item.text}
+				renderItem={renderItem}
+			/>
 			<View style={styles.footer}>
 				<TouchableOpacity
 					style={styles.fullButton}
@@ -42,7 +61,6 @@ const styles = StyleSheet.create({
 		left: 0,
 		right: 0,
 		height: 100,
-		flex: 1,
 		elevation: 10,
 		shadowColor: 'black',
 		shadowOpacity: 0.1,
