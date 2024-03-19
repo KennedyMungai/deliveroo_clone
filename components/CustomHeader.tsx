@@ -1,14 +1,39 @@
 import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
+import { Link } from 'expo-router'
 import React from 'react'
 import {
 	Image,
 	SafeAreaView,
 	StyleSheet,
 	Text,
+	TextInput,
 	TouchableOpacity,
 	View
 } from 'react-native'
+
+const SearchBar = () => (
+	<View style={styles.searchContainer}>
+		<View style={styles.searchSection}>
+			<View style={styles.searchField}>
+				<TextInput
+					placeholder='Restaurants, Groceries, Dishes'
+					style={styles.input}
+				/>
+			</View>
+			{/* TODO: Add a proper href for the component  */}
+			<Link href='/' asChild>
+				<TouchableOpacity style={styles.optionButton}>
+					<Ionicons
+						name='options-outline'
+						size={20}
+						color={Colors.primary}
+					/>
+				</TouchableOpacity>
+			</Link>
+		</View>
+	</View>
+)
 
 const CustomHeader = () => {
 	return (
@@ -39,6 +64,7 @@ const CustomHeader = () => {
 					/>
 				</TouchableOpacity>
 			</View>
+			<SearchBar />
 		</SafeAreaView>
 	)
 }
@@ -51,8 +77,8 @@ const styles = StyleSheet.create({
 		backgroundColor: '#FFF'
 	},
 	container: {
-		height: 150,
-		// marginTop: 50,
+		height: 50,
+		marginTop: 50,
 		backgroundColor: 'white',
 		display: 'flex',
 		flexDirection: 'row',
@@ -86,5 +112,31 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		gap: 5
+	},
+	searchContainer: {
+		height: 60,
+		backgroundColor: 'white',
+		marginTop: 10
+	},
+	searchSection: {
+		flex: 1,
+		flexDirection: 'row',
+		alignItems: 'center',
+		gap: 10,
+		paddingHorizontal: 20
+	},
+	searchField: {
+		flex: 1,
+		backgroundColor: Colors.lightGrey,
+		padding: 5,
+		borderRadius: 5
+	},
+	optionButton: {
+		padding: 10,
+		borderRadius: 50
+	},
+	input: {
+		padding: 10,
+		color: Colors.medium
 	}
 })
