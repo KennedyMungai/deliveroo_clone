@@ -2,7 +2,7 @@ import { someCategories } from '@/assets/data/filter'
 import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from 'expo-router'
-import React from 'react'
+import React, { useState } from 'react'
 import {
 	FlatList,
 	ListRenderItem,
@@ -84,6 +84,8 @@ const ItemBox = () => (
 )
 
 const FilterModal = () => {
+	const [items, setItems] = useState<SomeCategory[]>(someCategories)
+
 	const navigation = useNavigation()
 
 	const renderItem: ListRenderItem<SomeCategory> = ({ item }) => (
@@ -109,7 +111,7 @@ const FilterModal = () => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<FlatList
-				data={someCategories}
+				data={items}
 				keyExtractor={(item) => item.name}
 				renderItem={renderItem}
 				showsVerticalScrollIndicator={false}
