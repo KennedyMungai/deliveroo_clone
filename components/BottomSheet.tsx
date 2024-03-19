@@ -45,14 +45,6 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 				>
 					<Text style={styles.buttonText}>Confirm</Text>
 				</TouchableOpacity>
-				<Pressable style={styles.closeSheet}>
-					<Feather
-						name={'x'}
-						size={24}
-						color={'black'}
-						onPress={() => dismiss()}
-					/>
-				</Pressable>
 			</View>
 		</BottomSheetModal>
 	)
@@ -61,11 +53,6 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 export default BottomSheet
 
 const styles = StyleSheet.create({
-	closeSheet: {
-		position: 'absolute',
-		top: 5,
-		right: 10
-	},
 	button: {
 		backgroundColor: Colors.primary,
 		padding: 16,
