@@ -92,6 +92,7 @@ const FilterModal = () => {
 				<Text>{item.name}</Text>
 				<BouncyCheckbox
 					isChecked={item.checked}
+					disableBuiltInState
 					fillColor={Colors.primary}
 					onPress={() => {}}
 				/>
