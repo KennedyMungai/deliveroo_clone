@@ -137,6 +137,6 @@ const styles = StyleSheet.create({
 	},
 	input: {
 		padding: 10,
-		color: Colors.medium
+		color: Colors.mediumDark
 	}
 })
