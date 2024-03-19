@@ -1,3 +1,5 @@
+import Colors from '@/constants/Colors'
+import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
 import {
 	Image,
@@ -22,7 +24,12 @@ const CustomHeader = () => {
 					<Text>Home</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.profileButton}>
-					<Text>Profile Button</Text>
+					<Ionicons
+						name='person-circle-outline'
+						size={30}
+						color={Colors.primary}
+						style={{ backgroundColor: 'white' }}
+					/>
 				</TouchableOpacity>
 			</View>
 		</SafeAreaView>
