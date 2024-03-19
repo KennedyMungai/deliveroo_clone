@@ -16,6 +16,7 @@ const SearchBar = () => (
 	<View style={styles.searchContainer}>
 		<View style={styles.searchSection}>
 			<View style={styles.searchField}>
+				<Ionicons name='search' size={20} color={Colors.medium} />
 				<TextInput
 					placeholder='Restaurants, Groceries, Dishes'
 					style={styles.input}
@@ -129,7 +130,10 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: Colors.lightGrey,
 		padding: 5,
-		borderRadius: 5
+		borderRadius: 5,
+		display: 'flex',
+		flexDirection: 'row',
+		alignItems: 'center'
 	},
 	optionButton: {
 		padding: 10,
@@ -138,5 +142,6 @@ const styles = StyleSheet.create({
 	input: {
 		padding: 10,
 		color: Colors.mediumDark
-	}
+	},
+	searchIcon: {}
 })
