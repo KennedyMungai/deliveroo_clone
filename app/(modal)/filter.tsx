@@ -23,7 +23,11 @@ interface SomeCategory {
 const ItemBox = () => (
 	<View style={styles.itemContainer}>
 		<TouchableOpacity style={styles.item}>
-			<Fontisto name='arrow-swap' size={20} color={Colors.medium} />
+			<Ionicons
+				name='arrow-down-outline'
+				size={20}
+				color={Colors.medium}
+			/>
 			<Text style={{ flex: 1 }}>Sort</Text>
 			<Ionicons name='chevron-forward' size={22} color={Colors.primary} />
 		</TouchableOpacity>
@@ -95,7 +99,11 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		fontSize: 18
 	},
-	itemContainer: {},
+	itemContainer: {
+		padding: 8,
+		borderRadius: 8,
+		marginBottom: 16
+	},
 	item: {
 		flexDirection: 'row',
 		gap: 16,
