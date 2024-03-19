@@ -28,7 +28,8 @@ export default CustomHeader
 const styles = StyleSheet.create({
 	safeArea: {
 		flex: 1,
-		backgroundColor: 'white'
+		backgroundColor: 'white',
+		paddingHorizontal: 10
 	},
 	container: {
 		height: 150,
