@@ -13,6 +13,10 @@ const MainAppLayout = () => {
 						name='index'
 						options={{ header: () => <CustomHeader /> }}
 					/>
+					<Stack.Screen
+						name='(modal)/filter'
+						options={{ presentation: 'modal' }}
+					/>
 				</Stack>
 			</BottomSheetModalProvider>
 		</GestureHandlerRootView>
