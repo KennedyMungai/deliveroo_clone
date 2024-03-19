@@ -33,8 +33,10 @@ const styles = StyleSheet.create({
 	container: {
 		height: 150,
 		marginTop: 50,
+		display: 'flex',
+		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'space-between'
 	},
 	bike: {
 		width: 30,
