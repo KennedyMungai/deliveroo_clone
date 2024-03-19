@@ -18,6 +18,12 @@ const CustomHeader = () => {
 						style={styles.bike}
 					/>
 				</TouchableOpacity>
+				<TouchableOpacity style={styles.titleContainer}>
+					<Text>Home</Text>
+				</TouchableOpacity>
+				<TouchableOpacity style={styles.profileButton}>
+					<Text>Profile Button</Text>
+				</TouchableOpacity>
 			</View>
 		</SafeAreaView>
 	)
@@ -37,10 +43,15 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		gap: 20
 	},
 	bike: {
 		width: 30,
 		height: 30
-	}
+	},
+	titleContainer: {
+		flex: 1
+	},
+	profileButton: {}
 })
