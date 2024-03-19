@@ -1,7 +1,7 @@
 import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { Link } from 'expo-router'
-import React from 'react'
+import React, { useRef } from 'react'
 import {
 	Image,
 	SafeAreaView,
@@ -12,6 +12,7 @@ import {
 	View
 } from 'react-native'
 import BottomSheet from './BottomSheet'
+import { BottomSheetModal } from '@gorhom/bottom-sheet'
 
 const SearchBar = () => (
 	<View style={styles.searchContainer}>
@@ -38,17 +39,26 @@ const SearchBar = () => (
 )
 
 const CustomHeader = () => {
+	const bottomSheetRef = useRef<BottomSheetModal>()
+
+	const openModal = () => {
+		console.log('Modal Open')
+	}
+
 	return (
 		<SafeAreaView style={styles.safeArea}>
-			<BottomSheet />
+			<BottomSheet ref={bottomSheetRef} />
 			<View style={styles.container}>
-				<TouchableOpacity onPress={() => {}}>
+				<TouchableOpacity onPress={openModal}>
 					<Image
 						source={require('@/assets/images/bike.png')}
 						style={styles.bike}
 					/>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.titleContainer}>
+				<TouchableOpacity
+					style={styles.titleContainer}
+					onPress={openModal}
+				>
 					<Text style={styles.title}>Delivery . Now</Text>
 					<View style={styles.subtitleContainer}>
 						<Text style={styles.subtitle}>Nairobi, KE</Text>
