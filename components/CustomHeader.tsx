@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 	},
 	container: {
 		height: 150,
-		marginTop: 50,
+		// marginTop: 50,
 		display: 'flex',
 		flexDirection: 'row',
 		alignItems: 'center',
