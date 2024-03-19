@@ -160,10 +160,10 @@ const styles = StyleSheet.create({
 	},
 	item: {
 		flexDirection: 'row',
-		gap: 16,
+		gap: 20,
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		paddingVertical: 8,
+		paddingVertical: 12,
 		backgroundColor: 'white',
 		borderColor: Colors.grey,
 		borderBottomWidth: 1
