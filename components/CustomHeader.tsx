@@ -39,10 +39,10 @@ const SearchBar = () => (
 )
 
 const CustomHeader = () => {
-	const bottomSheetRef = useRef<BottomSheetModal>()
+	const bottomSheetRef = useRef<BottomSheetModal>(null)
 
 	const openModal = () => {
-		console.log('Modal Open')
+		bottomSheetRef.current?.present()
 	}
 
 	return (
