@@ -1,8 +1,8 @@
-import { categories } from '@/assets/data/home'
+import { someCategories } from '@/assets/data/filter'
 import Colors from '@/constants/Colors'
+import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from 'expo-router'
 import React from 'react'
-import { someCategories } from '@/assets/data/filter'
 import {
 	FlatList,
 	ListRenderItem,
@@ -12,7 +12,6 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
-import { Fontisto, Ionicons } from '@expo/vector-icons'
 
 interface SomeCategory {
 	name: string
