@@ -1,3 +1,4 @@
+import Colors from '@/constants/Colors'
 import { Feather } from '@expo/vector-icons'
 import {
 	BottomSheetBackdrop,
@@ -5,7 +6,13 @@ import {
 	useBottomSheetModal
 } from '@gorhom/bottom-sheet'
 import React, { forwardRef, useCallback, useMemo } from 'react'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import {
+	Pressable,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
+} from 'react-native'
 
 const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 	const snapPoints = useMemo(() => ['50%'], [])
@@ -32,6 +39,12 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 		>
 			<View>
 				<Text>BottomSheet</Text>
+				<TouchableOpacity
+					style={styles.button}
+					onPress={() => dismiss()}
+				>
+					<Text style={styles.buttonText}>Confirm</Text>
+				</TouchableOpacity>
 				<Pressable style={styles.closeSheet}>
 					<Feather
 						name={'x'}
@@ -52,5 +65,16 @@ const styles = StyleSheet.create({
 		position: 'absolute',
 		top: 5,
 		right: 10
+	},
+	button: {
+		backgroundColor: Colors.primary,
+		padding: 16,
+		margin: 16,
+		borderRadius: 4,
+		alignItems: 'center'
+	},
+	buttonText: {
+		color: 'white',
+		fontWeight: 'bold'
 	}
 })
