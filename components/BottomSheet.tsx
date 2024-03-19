@@ -1,9 +1,11 @@
 import Colors from '@/constants/Colors'
+import { Ionicons } from '@expo/vector-icons'
 import {
 	BottomSheetBackdrop,
 	BottomSheetModal,
 	useBottomSheetModal
 } from '@gorhom/bottom-sheet'
+import { Link } from 'expo-router'
 import React, { forwardRef, useCallback, useMemo } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
@@ -41,6 +43,47 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 						<Text style={styles.deliveryText}>Pick Up</Text>
 					</TouchableOpacity>
 				</View>
+
+				<Text style={styles.subHeader}>Your Location</Text>
+				{/* TODO: Add the proper link locations */}
+				<Link href={'/'} asChild>
+					<TouchableOpacity>
+						<View style={styles.item}>
+							<Ionicons
+								name='locate-outline'
+								size={20}
+								color={Colors.medium}
+							/>
+							<Text style={{ flex: 1 }}>Current Location</Text>
+							<Ionicons
+								name='chevron-forward'
+								size={20}
+								color={Colors.primary}
+							/>
+						</View>
+					</TouchableOpacity>
+				</Link>
+
+				<Text style={styles.subHeader}>Arrival Time</Text>
+				{/* TODO: Add the proper link locations */}
+				<Link href={'/'} asChild>
+					<TouchableOpacity>
+						<View style={styles.item}>
+							<Ionicons
+								name='time-outline'
+								size={20}
+								color={Colors.medium}
+							/>
+							<Text style={{ flex: 1 }}>Now</Text>
+							<Ionicons
+								name='chevron-forward'
+								size={20}
+								color={Colors.primary}
+							/>
+						</View>
+					</TouchableOpacity>
+				</Link>
+
 				<TouchableOpacity
 					style={styles.button}
 					onPress={() => dismiss()}
@@ -90,5 +133,20 @@ const styles = StyleSheet.create({
 		fontWeight: '700',
 		padding: 10,
 		color: 'white'
+	},
+	subHeader: {
+		fontSize: 16,
+		fontWeight: '600',
+		margin: 16
+	},
+	item: {
+		flexDirection: 'row',
+		gap: 16,
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		padding: 16,
+		backgroundColor: 'white',
+		borderColor: Colors.grey,
+		borderWidth: 1
 	}
 })
