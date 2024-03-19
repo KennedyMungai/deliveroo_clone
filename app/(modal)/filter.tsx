@@ -1,4 +1,5 @@
 import Colors from '@/constants/Colors'
+import { useNavigation } from 'expo-router'
 import React from 'react'
 import {
 	SafeAreaView,
@@ -9,11 +10,16 @@ import {
 } from 'react-native'
 
 const FilterModal = () => {
+	const navigation = useNavigation()
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<Text>Filter</Text>
 			<View style={styles.footer}>
-				<TouchableOpacity style={styles.fullButton}>
+				<TouchableOpacity
+					style={styles.fullButton}
+					onPress={() => navigation.goBack()}
+				>
 					<Text style={styles.footerText}>Done</Text>
 				</TouchableOpacity>
 			</View>
