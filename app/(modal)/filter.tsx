@@ -97,7 +97,12 @@ const FilterModal = () => {
 					onPress={() => {}}
 				/>
 			</View>
-			<View style={{ borderWidth: StyleSheet.hairlineWidth }} />
+			<View
+				style={{
+					borderWidth: 1,
+					borderColor: Colors.grey
+				}}
+			/>
 		</>
 	)
 
