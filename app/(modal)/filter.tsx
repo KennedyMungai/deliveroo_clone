@@ -97,6 +97,7 @@ const FilterModal = () => {
 				data={someCategories}
 				keyExtractor={(item) => item.name}
 				renderItem={renderItem}
+				showsVerticalScrollIndicator={false}
 				ListHeaderComponent={<ItemBox />}
 			/>
 			<View style={styles.footer}>
