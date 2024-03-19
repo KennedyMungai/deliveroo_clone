@@ -1,11 +1,21 @@
+import Colors from '@/constants/Colors'
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import {
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
+} from 'react-native'
 
 const FilterModal = () => {
 	return (
 		<SafeAreaView style={styles.container}>
-			<View>
-				<Text>FilterModal</Text>
+			<Text>Filter</Text>
+			<View style={styles.footer}>
+				<TouchableOpacity style={styles.fullButton}>
+					<Text>Done</Text>
+				</TouchableOpacity>
 			</View>
 		</SafeAreaView>
 	)
@@ -19,5 +29,19 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 20,
 		backgroundColor: 'white',
 		flex: 1
+	},
+	footer: {
+		position: 'absolute',
+		bottom: 0,
+		left: 0,
+		right: 0,
+		height: 100
+	},
+	fullButton: {
+		backgroundColor: Colors.primary,
+		padding: 16,
+		margin: 16,
+		borderRadius: 4,
+		alignItems: 'center'
 	}
 })
