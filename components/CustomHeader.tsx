@@ -28,7 +28,6 @@ const CustomHeader = () => {
 						name='person-circle-outline'
 						size={30}
 						color={Colors.primary}
-						style={{ backgroundColor: 'white' }}
 					/>
 				</TouchableOpacity>
 			</View>
@@ -60,7 +59,11 @@ const styles = StyleSheet.create({
 	titleContainer: {
 		flex: 1
 	},
-	profileButton: {},
+	profileButton: {
+		borderRadius: 50,
+		backgroundColor: Colors.lightGrey,
+		padding: 5
+	},
 	title: {
 		fontSize: 14,
 		fontWeight: 'bold',
