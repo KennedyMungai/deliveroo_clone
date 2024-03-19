@@ -11,6 +11,7 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
+import BottomSheet from './BottomSheet'
 
 const SearchBar = () => (
 	<View style={styles.searchContainer}>
@@ -39,6 +40,7 @@ const SearchBar = () => (
 const CustomHeader = () => {
 	return (
 		<SafeAreaView style={styles.safeArea}>
+			<BottomSheet />
 			<View style={styles.container}>
 				<TouchableOpacity onPress={() => {}}>
 					<Image
