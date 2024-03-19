@@ -88,6 +88,16 @@ const FilterModal = () => {
 
 	const navigation = useNavigation()
 
+	const handleClearAll = () => {
+		const updatedItems = items.map((item) => {
+			item.checked = false
+
+			return item
+		})
+
+		setItems(updatedItems)
+	}
+
 	const renderItem: ListRenderItem<SomeCategory> = ({ item, index }) => (
 		<>
 			<View style={styles.row}>
