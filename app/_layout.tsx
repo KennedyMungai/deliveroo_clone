@@ -15,7 +15,11 @@ const MainAppLayout = () => {
 					/>
 					<Stack.Screen
 						name='(modal)/filter'
-						options={{ presentation: 'modal' }}
+						options={{
+							presentation: 'modal',
+							animation: 'slide_from_bottom',
+							headerTitle: 'Label'
+						}}
 					/>
 				</Stack>
 			</BottomSheetModalProvider>
