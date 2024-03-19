@@ -36,9 +36,9 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 			ref={ref}
 			overDragResistanceFactor={0}
 			backdropComponent={renderBackdrop}
+			backgroundStyle={{ backgroundColor: Colors.lightGrey }}
 		>
 			<View>
-				<Text>BottomSheet</Text>
 				<TouchableOpacity
 					style={styles.button}
 					onPress={() => dismiss()}
