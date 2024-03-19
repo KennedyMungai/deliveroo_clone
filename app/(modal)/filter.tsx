@@ -86,7 +86,7 @@ const FilterModal = () => {
 	const navigation = useNavigation()
 
 	const renderItem: ListRenderItem<SomeCategory> = ({ item }) => (
-		<View>
+		<View style={styles.row}>
 			<Text>{item.name}</Text>
 		</View>
 	)
@@ -166,5 +166,10 @@ const styles = StyleSheet.create({
 		backgroundColor: 'white',
 		borderColor: Colors.grey,
 		borderBottomWidth: 1
+	},
+	row: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		padding: 10
 	}
 })
