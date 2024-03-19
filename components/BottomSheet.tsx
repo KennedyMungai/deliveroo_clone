@@ -1,18 +1,11 @@
 import Colors from '@/constants/Colors'
-import { Feather } from '@expo/vector-icons'
 import {
 	BottomSheetBackdrop,
 	BottomSheetModal,
 	useBottomSheetModal
 } from '@gorhom/bottom-sheet'
 import React, { forwardRef, useCallback, useMemo } from 'react'
-import {
-	Pressable,
-	StyleSheet,
-	Text,
-	TouchableOpacity,
-	View
-} from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 	const snapPoints = useMemo(() => ['50%'], [])
@@ -39,7 +32,15 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 			backgroundStyle={{ backgroundColor: Colors.lightGrey }}
 			handleIndicatorStyle={{ display: 'none' }}
 		>
-			<View>
+			<View style={styles.contentContainer}>
+				<View style={styles.toggle}>
+					<TouchableOpacity style={styles.toggleActive}>
+						<Text style={styles.activeDeliveryText}>Delivery</Text>
+					</TouchableOpacity>
+					<TouchableOpacity style={styles.toggleInactive}>
+						<Text style={styles.deliveryText}>Pick Up</Text>
+					</TouchableOpacity>
+				</View>
 				<TouchableOpacity
 					style={styles.button}
 					onPress={() => dismiss()}
@@ -64,5 +65,28 @@ const styles = StyleSheet.create({
 	buttonText: {
 		color: 'white',
 		fontWeight: 'bold'
+	},
+	contentContainer: {
+		flex: 1
+	},
+	toggle: {
+		flexDirection: 'row',
+		justifyContent: 'center',
+		gap: 20,
+		marginBottom: 32
+	},
+	toggleActive: {
+		backgroundColor: Colors.primary,
+		borderRadius: 10
+	},
+	toggleInactive: {},
+	deliveryText: {
+		fontWeight: '700',
+		padding: 10
+	},
+	activeDeliveryText: {
+		fontWeight: '700',
+		padding: 10,
+		color: 'white'
 	}
 })
