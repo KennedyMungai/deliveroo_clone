@@ -88,15 +88,27 @@ const FilterModal = () => {
 
 	const navigation = useNavigation()
 
-	const renderItem: ListRenderItem<SomeCategory> = ({ item }) => (
+	const renderItem: ListRenderItem<SomeCategory> = ({ item, index }) => (
 		<>
 			<View style={styles.row}>
 				<Text>{item.name}</Text>
 				<BouncyCheckbox
-					isChecked={item.checked}
+					isChecked={items[index].checked}
 					disableBuiltInState
 					fillColor={Colors.primary}
-					onPress={() => {}}
+					onPress={() => {
+						const isChecked = items[index].checked
+
+						const updatedItems = items.map((item) => {
+							if (item.name === items[index].name) {
+								item.checked = !isChecked
+							}
+
+							return item
+						})
+
+						setItems(updatedItems)
+					}}
 				/>
 			</View>
 			<View
