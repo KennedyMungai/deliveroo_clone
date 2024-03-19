@@ -1,11 +1,23 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import {
+	Image,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
+} from 'react-native'
 
 const CustomHeader = () => {
 	return (
 		<SafeAreaView style={styles.safeArea}>
 			<View style={styles.container}>
-				<Text>CustomHeader</Text>
+				<TouchableOpacity onPress={() => {}}>
+					<Image
+						source={require('@/assets/images/bike.png')}
+						style={styles.bike}
+					/>
+				</TouchableOpacity>
 			</View>
 		</SafeAreaView>
 	)
@@ -14,9 +26,16 @@ const CustomHeader = () => {
 export default CustomHeader
 
 const styles = StyleSheet.create({
-	safeArea: { flex: 1, backgroundColor: 'white' },
+	safeArea: {
+		flex: 1,
+		backgroundColor: 'white'
+	},
 	container: {
 		height: 150,
 		marginTop: 50
+	},
+	bike: {
+		width: 30,
+		height: 30
 	}
 })
