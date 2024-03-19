@@ -1,6 +1,11 @@
-import { BottomSheetBackdrop, BottomSheetModal } from '@gorhom/bottom-sheet'
+import { Feather } from '@expo/vector-icons'
+import {
+	BottomSheetBackdrop,
+	BottomSheetModal,
+	useBottomSheetModal
+} from '@gorhom/bottom-sheet'
 import React, { forwardRef, useCallback, useMemo } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 	const snapPoints = useMemo(() => ['50%'], [])
@@ -16,6 +21,8 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 		[]
 	)
 
+	const { dismiss } = useBottomSheetModal()
+
 	return (
 		<BottomSheetModal
 			snapPoints={snapPoints}
@@ -25,6 +32,14 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 		>
 			<View>
 				<Text>BottomSheet</Text>
+				<Pressable style={styles.closeSheet}>
+					<Feather
+						name={'x'}
+						size={24}
+						color={'black'}
+						onPress={() => dismiss()}
+					/>
+				</Pressable>
 			</View>
 		</BottomSheetModal>
 	)
@@ -32,4 +47,10 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 
 export default BottomSheet
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	closeSheet: {
+		position: 'absolute',
+		top: 5,
+		right: 10
+	}
+})
