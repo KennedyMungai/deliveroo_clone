@@ -97,7 +97,7 @@ const FilterModal = () => {
 		const newSelected = selectedItems.length > 0
 
 		if (hasSelected !== newSelected) {
-			console.log('Has Changed')
+			flexWidth.value = newSelected ? 150 : 0
 		}
 
 		setSelected(selectedItems)
@@ -164,7 +164,7 @@ const FilterModal = () => {
 			<View style={styles.footer}>
 				<View style={styles.btnContainer}>
 					<TouchableOpacity
-						style={styles.outlineButton}
+						style={[animatedStyles, styles.outlineButton]}
 						onPress={handleClearAll}
 					>
 						<Text style={styles.outlineButtonText}>Clear All</Text>
