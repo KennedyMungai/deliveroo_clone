@@ -2,7 +2,7 @@ import { someCategories } from '@/assets/data/filter'
 import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from 'expo-router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
 	FlatList,
 	ListRenderItem,
@@ -90,6 +90,16 @@ const FilterModal = () => {
 	const flexWidth = useSharedValue(0)
 
 	const navigation = useNavigation()
+
+	useEffect(() => {
+		const hasSelected = selected.length > 0
+		const selectedItems = items.filter((item) => item.checked)
+		const newSelected = selectedItems.length > 0
+
+		if (hasSelected !== newSelected) {
+			console.log('Has Changed')
+		}
+	}, [items])
 
 	const handleClearAll = () => {
 		const updatedItems = items.map((item) => {
