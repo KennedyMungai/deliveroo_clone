@@ -26,9 +26,8 @@ const styles = StyleSheet.create({
 		shadowColor: '#00000050',
 		shadowOffset: {
 			width: 0,
-			height: 2
-		},
-		margin: 2
+			height: 4
+		}
 	},
 	categoryText: {
 		padding: 5,
