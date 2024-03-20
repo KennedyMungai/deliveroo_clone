@@ -521,4 +521,4 @@ const styles = StyleSheet.create({
 	}
 })
 
-module.exports = ParallaxScrollView
+export default ParallaxScrollView
