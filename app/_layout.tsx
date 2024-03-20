@@ -70,7 +70,8 @@ const MainAppLayout = () => {
 						name='restaurants/[restaurantId]'
 						options={{
 							animation: 'slide_from_right',
-							animationDuration: 300
+							animationDuration: 300,
+							headerTransparent: true
 						}}
 					/>
 				</Stack>
