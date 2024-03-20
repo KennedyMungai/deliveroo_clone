@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const RestaurantDetailsPage = () => {
 	return (
-		<View>
+		<View style={styles.container}>
 			<Text>RestaurantDetailsPage</Text>
 		</View>
 	)
@@ -11,4 +11,11 @@ const RestaurantDetailsPage = () => {
 
 export default RestaurantDetailsPage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: 'white',
+		paddingTop: 100,
+		paddingHorizontal: 10
+	}
+})
