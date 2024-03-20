@@ -45,7 +45,7 @@ const MainAppLayout = () => {
 					<Stack.Screen
 						name='(modal)/locationSearch'
 						options={{
-							presentation: 'modal',
+							presentation: 'fullScreenModal',
 							animation: 'slide_from_bottom',
 							animationDuration: 300,
 							headerTransparent: true,
