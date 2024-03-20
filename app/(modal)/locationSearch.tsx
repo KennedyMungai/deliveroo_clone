@@ -1,5 +1,7 @@
+import Colors from '@/constants/Colors'
 import React, { useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import MapView from 'react-native-maps'
 
 const LocationSearch = () => {
@@ -13,6 +15,11 @@ const LocationSearch = () => {
 	return (
 		<View style={styles.container}>
 			<MapView style={styles.map} region={location} showsUserLocation />
+			<View style={styles.mapActionsBox}>
+				<TouchableOpacity style={styles.button}>
+					<Text style={styles.buttonText}>Confirm</Text>
+				</TouchableOpacity>
+			</View>
 		</View>
 	)
 }
@@ -26,5 +33,24 @@ const styles = StyleSheet.create({
 	},
 	map: {
 		flex: 1
+	},
+	mapActionsBox: {
+		position: 'absolute',
+		bottom: 15,
+		left: 100,
+		right: 100
+	},
+	button: {
+		padding: 8,
+		borderWidth: 1,
+		borderColor: Colors.primary,
+		justifyContent: 'center',
+		borderRadius: 8
+	},
+	buttonText: {
+		fontWeight: '400',
+		fontSize: 20,
+		color: Colors.primary,
+		textAlign: 'center'
 	}
 })
