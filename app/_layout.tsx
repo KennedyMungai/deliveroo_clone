@@ -47,7 +47,23 @@ const MainAppLayout = () => {
 						options={{
 							presentation: 'modal',
 							animation: 'slide_from_bottom',
-							animationDuration: 300
+							animationDuration: 300,
+							headerTransparent: true,
+							headerTitle: 'Location Search',
+							headerLeft: () => (
+								<TouchableOpacity
+									onPress={() => navigation.goBack()}
+								>
+									<Ionicons
+										name='close-outline'
+										size={24}
+										style={{
+											marginRight: 20,
+											color: Colors.primary
+										}}
+									/>
+								</TouchableOpacity>
+							)
 						}}
 					/>
 				</Stack>
