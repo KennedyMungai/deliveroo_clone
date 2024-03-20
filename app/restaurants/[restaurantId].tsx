@@ -5,9 +5,7 @@ import ParallaxScrollView from '@/components/parallax-scroll-view'
 const RestaurantDetailsPage = () => {
 	return (
 		<>
-			<ParallaxScrollView style={styles.container}>
-				<Text>RestaurantDetailsPage</Text>
-			</ParallaxScrollView>
+			<ParallaxScrollView />
 		</>
 	)
 }
