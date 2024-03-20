@@ -66,6 +66,13 @@ const MainAppLayout = () => {
 							)
 						}}
 					/>
+					<Stack.Screen
+						name='restaurants/[restaurantId]'
+						options={{
+							animation: 'slide_from_right',
+							animationDuration: 300
+						}}
+					/>
 				</Stack>
 			</BottomSheetModalProvider>
 		</GestureHandlerRootView>
