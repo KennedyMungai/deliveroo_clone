@@ -6,7 +6,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native'
 const MainAppPage = () => {
 	return (
 		<SafeAreaView style={styles.container}>
-			<ScrollView>
+			<ScrollView contentContainerStyle={{ paddingVertical: 20 }}>
 				<Categories />
 				<Text style={styles.header}>
 					Top picks in your neighborhood
