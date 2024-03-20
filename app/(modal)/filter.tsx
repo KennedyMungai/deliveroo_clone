@@ -99,6 +99,8 @@ const FilterModal = () => {
 		if (hasSelected !== newSelected) {
 			console.log('Has Changed')
 		}
+
+		setSelected(selectedItems)
 	}, [items])
 
 	const handleClearAll = () => {
