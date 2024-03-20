@@ -12,14 +12,16 @@ import {
 const Restaurants = () => {
 	return (
 		<ScrollView horizontal showsHorizontalScrollIndicator={false}>
-			{restaurants.map((hotel, index) => (
-				<Link href={`restaurants/${hotel.id}`} key={index} asChild>
-					<TouchableOpacity style={styles.categoryCard} key={index}>
+			{restaurants.map((restaurant, index) => (
+				<Link href={`restaurants/${restaurant.id}`} key={index} asChild>
+					<TouchableOpacity style={styles.categoryCard}>
 						<Image
-							source={hotel.img}
-							style={{ borderRadius: 4, aspectRatio: 1 }}
+							source={restaurant.img}
+							style={styles.imageContainer}
 						/>
-						<Text style={styles.categoryText}>{hotel.name}</Text>
+						<Text style={styles.categoryText}>
+							{restaurant.name}
+						</Text>
 					</TouchableOpacity>
 				</Link>
 			))}
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
 	categoryCard: {
 		width: 300,
 		height: 250,
-		marginHorizontal: 100,
+		marginHorizontal: 10,
 		elevation: 2,
 		shadowColor: '#00000050',
 		shadowOffset: {
@@ -48,5 +50,11 @@ const styles = StyleSheet.create({
 		fontSize: 12,
 		fontWeight: 'bold',
 		textAlign: 'center'
+	},
+	imageContainer: {
+		flex: 1,
+		width: undefined,
+		height: undefined,
+		borderRadius: 4
 	}
 })
