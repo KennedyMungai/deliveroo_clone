@@ -23,7 +23,7 @@ const MainAppLayout = () => {
 						options={{
 							presentation: 'modal',
 							animation: 'slide_from_bottom',
-							headerTitle: 'Label',
+							headerTitle: 'Filter',
 							headerShadowVisible: false,
 							headerTransparent: true,
 							headerLeft: () => (
