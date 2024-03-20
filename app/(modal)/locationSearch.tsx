@@ -28,10 +28,9 @@ const LocationSearch = () => {
 						if (!point) return
 
 						setLocation({
+							...location,
 							latitude: point.lat,
-							longitude: point.lng,
-							latitudeDelta: 0.02,
-							longitudeDelta: 0.2
+							longitude: point.lng
 						})
 					}}
 					query={{
