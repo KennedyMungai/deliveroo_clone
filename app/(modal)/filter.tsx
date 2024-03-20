@@ -92,6 +92,7 @@ const FilterModal = () => {
 	const [items, setItems] = useState<SomeCategory[]>(someCategories)
 	const [selected, setSelected] = useState<SomeCategory[]>([])
 	const flexWidth = useSharedValue(0)
+	const scale = useSharedValue(0)
 
 	const navigation = useNavigation()
 
@@ -102,6 +103,7 @@ const FilterModal = () => {
 
 		if (hasSelected !== newSelected) {
 			flexWidth.value = withTiming(newSelected ? 150 : 0)
+			scale.value = withTiming(newSelected ? 1 : 0)
 		}
 
 		setSelected(selectedItems)
@@ -122,6 +124,12 @@ const FilterModal = () => {
 			width: flexWidth.value,
 			display: flexWidth.value ? 'flex' : 'none',
 			borderWidth: flexWidth.value ? 1 : 0
+		}
+	})
+
+	const animatedText = useAnimatedStyle(() => {
+		return {
+			transform: [{ scale: scale.value }]
 		}
 	})
 
@@ -173,9 +181,11 @@ const FilterModal = () => {
 						style={[animatedStyles, styles.outlineButton]}
 					>
 						<TouchableOpacity onPress={handleClearAll}>
-							<Text style={styles.outlineButtonText}>
+							<Animated.Text
+								style={[animatedText, styles.outlineButtonText]}
+							>
 								Clear All
-							</Text>
+							</Animated.Text>
 						</TouchableOpacity>
 					</Animated.View>
 
