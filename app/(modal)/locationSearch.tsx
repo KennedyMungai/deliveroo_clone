@@ -57,8 +57,7 @@ export default LocationSearch
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		paddingTop: 100
+		flex: 1
 	},
 	map: {
 		flex: 1
@@ -83,7 +82,7 @@ const styles = StyleSheet.create({
 		textAlign: 'center'
 	},
 	googleSearchContainer: {
-		padding: 8,
+		padding: 16,
 		width: '100%',
 		position: 'absolute',
 		top: 100,
