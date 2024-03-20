@@ -1,10 +1,18 @@
+import Categories from '@/components/categories'
+import Restaurants from '@/components/restaurants'
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native'
 
 const MainAppPage = () => {
 	return (
 		<SafeAreaView style={styles.container}>
-			<Text>MainAppPage</Text>
+			<ScrollView>
+				<Categories />
+				<Text style={styles.header}>
+					Top picks in your neighborhood
+				</Text>
+				<Restaurants />
+			</ScrollView>
 		</SafeAreaView>
 	)
 }
@@ -17,5 +25,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		paddingTop: 180,
 		paddingHorizontal: 20
-	}
+	},
+	header: {}
 })
