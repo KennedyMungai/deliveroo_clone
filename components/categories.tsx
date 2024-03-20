@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
 	categoryText: {
 		padding: 5,
 		fontSize: 12,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		textAlign: 'center'
 	}
 })
