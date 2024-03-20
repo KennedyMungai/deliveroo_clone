@@ -136,7 +136,9 @@ const FilterModal = () => {
 	const renderItem: ListRenderItem<SomeCategory> = ({ item, index }) => (
 		<>
 			<View style={styles.row}>
-				<Text>{item.name}</Text>
+				<Text>
+					{item.name} {`(${item.count})`}
+				</Text>
 				<BouncyCheckbox
 					isChecked={items[index].checked}
 					disableBuiltInState
