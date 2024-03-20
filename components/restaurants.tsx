@@ -34,7 +34,7 @@ export default Restaurants
 const styles = StyleSheet.create({
 	categoryCard: {
 		width: 300,
-		height: 250,
+		height: 200,
 		marginHorizontal: 10,
 		elevation: 2,
 		shadowColor: '#00000050',
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 	},
 	categoryText: {
 		padding: 5,
-		fontSize: 12,
+		fontSize: 16,
 		fontWeight: 'bold',
 		textAlign: 'center'
 	},
