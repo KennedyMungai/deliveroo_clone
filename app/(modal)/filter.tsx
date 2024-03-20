@@ -152,10 +152,10 @@ const FilterModal = () => {
 			<View style={styles.footer}>
 				<View style={styles.btnContainer}>
 					<TouchableOpacity
-						style={styles.fullButton}
+						style={styles.outlineButton}
 						onPress={() => navigation.goBack()}
 					>
-						<Text style={styles.footerText}>Clear All</Text>
+						<Text style={styles.outlineButtonText}>Clear All</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
 						style={styles.fullButton}
@@ -235,5 +235,18 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		gap: 12,
 		justifyContent: 'center'
+	},
+	outlineButton: {
+		padding: 16,
+		margin: 16,
+		borderRadius: 4,
+		alignItems: 'center',
+		borderColor: Colors.primary,
+		borderWidth: 1
+	},
+	outlineButtonText: {
+		color: Colors.primary,
+		fontWeight: 'bold',
+		fontSize: 16
 	}
 })
