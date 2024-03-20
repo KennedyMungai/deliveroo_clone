@@ -45,8 +45,7 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 				</View>
 
 				<Text style={styles.subHeader}>Your Location</Text>
-				{/* TODO: Add the proper link locations */}
-				<Link href={'/'} asChild>
+				<Link href={'/(modal)/locationSearch'} asChild>
 					<TouchableOpacity>
 						<View style={styles.item}>
 							<Ionicons
@@ -65,7 +64,6 @@ const BottomSheet = forwardRef<BottomSheetModal>((props, ref) => {
 				</Link>
 
 				<Text style={styles.subHeader}>Arrival Time</Text>
-				{/* TODO: Add the proper link locations */}
 				<Link href={'/'} asChild>
 					<TouchableOpacity>
 						<View style={styles.item}>
