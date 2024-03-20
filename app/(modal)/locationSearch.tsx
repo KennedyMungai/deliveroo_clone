@@ -21,7 +21,8 @@ export default LocationSearch
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
+		paddingTop: 100
 	},
 	map: {
 		flex: 1
