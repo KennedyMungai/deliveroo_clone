@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Animated, Dimensions, View, StyleSheet } from 'react-native'
 import { ViewPropTypes } from 'deprecated-react-native-prop-types'
 
-const styles = require('./styles')
-
 import { bool, func, number, string } from 'prop-types'
 
 const window = Dimensions.get('window')
