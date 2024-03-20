@@ -20,9 +20,19 @@ const LocationSearch = () => {
 		<View style={styles.container}>
 			<View style={styles.googleSearchContainer}>
 				<GooglePlacesAutocomplete
-					placeholder='Search'
+					placeholder='Search Or Move the Map'
+					fetchDetails={true}
 					onPress={(data, details = null) => {
-						console.log(data, details)
+						const point = details?.geometry.location
+
+						if (!point) return
+
+						setLocation({
+							latitude: point.lat,
+							longitude: point.lng,
+							latitudeDelta: 0.02,
+							longitudeDelta: 0.2
+						})
 					}}
 					query={{
 						key: process.env.EXPO_PUBLIC_GOOGLE_API_KEY,
