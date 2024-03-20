@@ -12,6 +12,7 @@ const MainAppPage = () => {
 					Top picks in your neighborhood
 				</Text>
 				<Restaurants />
+				<Text style={styles.header}>Offers near you</Text>
 			</ScrollView>
 		</SafeAreaView>
 	)
@@ -26,5 +27,10 @@ const styles = StyleSheet.create({
 		paddingTop: 180,
 		paddingHorizontal: 20
 	},
-	header: {}
+	header: {
+		fontSize: 18,
+		fontWeight: 'bold',
+		marginBottom: 16,
+		paddingHorizontal: 16
+	}
 })
