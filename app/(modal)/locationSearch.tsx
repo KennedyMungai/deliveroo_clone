@@ -12,7 +12,7 @@ const LocationSearch = () => {
 
 	return (
 		<View style={styles.container}>
-			<MapView style={styles.map} region={location} />
+			<MapView style={styles.map} region={location} showsUserLocation />
 		</View>
 	)
 }
