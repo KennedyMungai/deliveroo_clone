@@ -13,7 +13,10 @@ import {
 	View
 } from 'react-native'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
-import { useAnimatedStyle, useSharedValue } from 'react-native-reanimated'
+import Animated, {
+	useAnimatedStyle,
+	useSharedValue
+} from 'react-native-reanimated'
 
 interface SomeCategory {
 	name: string
@@ -115,7 +118,9 @@ const FilterModal = () => {
 
 	const animatedStyles = useAnimatedStyle(() => {
 		return {
-			width: flexWidth.value
+			width: flexWidth.value,
+			display: flexWidth.value ? 'flex' : 'none',
+			borderWidth: flexWidth.value ? 1 : 0
 		}
 	})
 
@@ -163,12 +168,16 @@ const FilterModal = () => {
 			/>
 			<View style={styles.footer}>
 				<View style={styles.btnContainer}>
-					<TouchableOpacity
+					<Animated.View
 						style={[animatedStyles, styles.outlineButton]}
-						onPress={handleClearAll}
 					>
-						<Text style={styles.outlineButtonText}>Clear All</Text>
-					</TouchableOpacity>
+						<TouchableOpacity onPress={handleClearAll}>
+							<Text style={styles.outlineButtonText}>
+								Clear All
+							</Text>
+						</TouchableOpacity>
+					</Animated.View>
+
 					<TouchableOpacity
 						style={styles.fullButton}
 						onPress={() => navigation.goBack()}
