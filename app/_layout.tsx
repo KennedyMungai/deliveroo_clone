@@ -49,7 +49,7 @@ const MainAppLayout = () => {
 							animation: 'slide_from_bottom',
 							animationDuration: 300,
 							headerTransparent: true,
-							headerTitle: 'Location Search',
+							headerTitle: 'Select Location',
 							headerLeft: () => (
 								<TouchableOpacity
 									onPress={() => navigation.goBack()}
