@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import MapView from 'react-native-maps'
 
 const LocationSearch = () => {
+	const [location, setLocation] = useState({
+		latitude: 1,
+		longitude: 38,
+		latitudeDelta: 0.02,
+		longitudeDelta: 0.2
+	})
+
 	return (
 		<View style={styles.container}>
 			<MapView style={styles.map} />
