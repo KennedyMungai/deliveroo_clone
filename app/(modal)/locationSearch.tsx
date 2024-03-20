@@ -3,6 +3,7 @@ import { useNavigation } from 'expo-router'
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import MapView from 'react-native-maps'
 
 const LocationSearch = () => {
@@ -17,6 +18,19 @@ const LocationSearch = () => {
 
 	return (
 		<View style={styles.container}>
+			<View style={styles.googleSearchContainer}>
+				<GooglePlacesAutocomplete
+					placeholder='Search'
+					onPress={(data, details = null) => {
+						console.log(data, details)
+					}}
+					query={{
+						key: process.env.EXPO_PUBLIC_GOOGLE_API_KEY,
+						language: 'en'
+					}}
+				/>
+			</View>
+
 			<MapView style={styles.map} region={location} showsUserLocation />
 			<View style={styles.mapActionsBox}>
 				<TouchableOpacity
@@ -58,5 +72,12 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: Colors.primary,
 		textAlign: 'center'
+	},
+	googleSearchContainer: {
+		padding: 8,
+		width: '100%',
+		position: 'absolute',
+		top: 100,
+		zIndex: 10
 	}
 })
