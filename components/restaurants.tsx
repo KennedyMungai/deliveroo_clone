@@ -1,4 +1,5 @@
 import { restaurants } from '@/assets/data/home'
+import Colors from '@/constants/Colors'
 import { Link } from 'expo-router'
 import React from 'react'
 import {
@@ -6,7 +7,8 @@ import {
 	ScrollView,
 	StyleSheet,
 	Text,
-	TouchableOpacity
+	TouchableOpacity,
+	View
 } from 'react-native'
 
 const Restaurants = () => {
@@ -19,9 +21,17 @@ const Restaurants = () => {
 							source={restaurant.img}
 							style={styles.imageContainer}
 						/>
-						<Text style={styles.categoryText}>
-							{restaurant.name}
-						</Text>
+						<View style={styles.categoryBox}>
+							<Text style={styles.categoryRestaurantText}>
+								{restaurant.name}
+							</Text>
+							<Text style={{ color: Colors.green }}>
+								{restaurant.rating} {restaurant.ratings}
+							</Text>
+							<Text style={{ color: Colors.medium }}>
+								{restaurant.distance}
+							</Text>
+						</View>
 					</TouchableOpacity>
 				</Link>
 			))}
@@ -46,15 +56,20 @@ const styles = StyleSheet.create({
 		gap: 20
 	},
 	categoryText: {
-		padding: 5,
+		paddingVertical: 5,
 		fontSize: 16,
 		fontWeight: 'bold',
 		textAlign: 'center'
 	},
 	imageContainer: {
-		flex: 1,
+		flex: 2,
 		width: undefined,
 		height: undefined,
 		borderRadius: 4
-	}
+	},
+	categoryBox: {
+		flex: 1,
+		padding: 10
+	},
+	categoryRestaurantText: {}
 })
