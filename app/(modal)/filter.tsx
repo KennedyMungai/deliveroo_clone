@@ -15,7 +15,8 @@ import {
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import Animated, {
 	useAnimatedStyle,
-	useSharedValue
+	useSharedValue,
+	withTiming
 } from 'react-native-reanimated'
 
 interface SomeCategory {
@@ -100,7 +101,7 @@ const FilterModal = () => {
 		const newSelected = selectedItems.length > 0
 
 		if (hasSelected !== newSelected) {
-			flexWidth.value = newSelected ? 150 : 0
+			flexWidth.value = withTiming(newSelected ? 150 : 0)
 		}
 
 		setSelected(selectedItems)
@@ -220,7 +221,8 @@ const styles = StyleSheet.create({
 		margin: 16,
 		borderRadius: 4,
 		alignItems: 'center',
-		flex: 1
+		flex: 1,
+		height: 56
 	},
 	footerText: {
 		color: 'white',
@@ -264,7 +266,8 @@ const styles = StyleSheet.create({
 		borderRadius: 4,
 		alignItems: 'center',
 		borderColor: Colors.primary,
-		borderWidth: 1
+		borderWidth: 1,
+		height: 56
 	},
 	outlineButtonText: {
 		color: Colors.primary,
