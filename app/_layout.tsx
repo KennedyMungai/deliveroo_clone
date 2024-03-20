@@ -1,4 +1,5 @@
 import CustomHeader from '@/components/CustomHeader'
+import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 import { Stack, useNavigation } from 'expo-router'
@@ -32,7 +33,10 @@ const MainAppLayout = () => {
 									<Ionicons
 										name='close-outline'
 										size={24}
-										style={{ marginRight: 20 }}
+										style={{
+											marginRight: 20,
+											color: Colors.primary
+										}}
 									/>
 								</TouchableOpacity>
 							)
