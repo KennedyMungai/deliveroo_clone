@@ -1,10 +1,13 @@
 import Colors from '@/constants/Colors'
+import { useNavigation } from 'expo-router'
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import MapView from 'react-native-maps'
 
 const LocationSearch = () => {
+	const navigation = useNavigation()
+
 	const [location, setLocation] = useState({
 		latitude: 1.0,
 		longitude: 38.23,
@@ -16,7 +19,10 @@ const LocationSearch = () => {
 		<View style={styles.container}>
 			<MapView style={styles.map} region={location} showsUserLocation />
 			<View style={styles.mapActionsBox}>
-				<TouchableOpacity style={styles.button}>
+				<TouchableOpacity
+					style={styles.button}
+					onPress={() => navigation.goBack()}
+				>
 					<Text style={styles.buttonText}>Confirm</Text>
 				</TouchableOpacity>
 			</View>
