@@ -163,7 +163,7 @@ const FilterModal = () => {
 				<View style={styles.btnContainer}>
 					<TouchableOpacity
 						style={styles.outlineButton}
-						onPress={() => navigation.goBack()}
+						onPress={handleClearAll}
 					>
 						<Text style={styles.outlineButtonText}>Clear All</Text>
 					</TouchableOpacity>
