@@ -13,6 +13,7 @@ import {
 	View
 } from 'react-native'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
+import { useAnimatedStyle, useSharedValue } from 'react-native-reanimated'
 
 interface SomeCategory {
 	name: string
@@ -85,6 +86,8 @@ const ItemBox = () => (
 
 const FilterModal = () => {
 	const [items, setItems] = useState<SomeCategory[]>(someCategories)
+	const [selected, setSelected] = useState<SomeCategory[]>([])
+	const flexWidth = useSharedValue(0)
 
 	const navigation = useNavigation()
 
@@ -97,6 +100,12 @@ const FilterModal = () => {
 
 		setItems(updatedItems)
 	}
+
+	const animatedStyles = useAnimatedStyle(() => {
+		return {
+			width: flexWidth.value
+		}
+	})
 
 	const renderItem: ListRenderItem<SomeCategory> = ({ item, index }) => (
 		<>
@@ -141,12 +150,20 @@ const FilterModal = () => {
 				style={{ marginBottom: 100 }}
 			/>
 			<View style={styles.footer}>
-				<TouchableOpacity
-					style={styles.fullButton}
-					onPress={() => navigation.goBack()}
-				>
-					<Text style={styles.footerText}>Done</Text>
-				</TouchableOpacity>
+				<View style={styles.btnContainer}>
+					<TouchableOpacity
+						style={styles.fullButton}
+						onPress={() => navigation.goBack()}
+					>
+						<Text style={styles.footerText}>Clear All</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={styles.fullButton}
+						onPress={() => navigation.goBack()}
+					>
+						<Text style={styles.footerText}>Done</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		</SafeAreaView>
 	)
@@ -213,5 +230,10 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		padding: 10,
 		justifyContent: 'space-between'
+	},
+	btnContainer: {
+		flexDirection: 'row',
+		gap: 12,
+		justifyContent: 'center'
 	}
 })
