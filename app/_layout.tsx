@@ -81,7 +81,7 @@ const MainAppLayout = () => {
 							presentation: 'containedModal',
 							animation: 'slide_from_bottom',
 							animationDuration: 300,
-							headerTitle: 'Dish Details',
+							headerTitle: '',
 							headerTransparent: true,
 							headerLeft: () => (
 								<TouchableOpacity
