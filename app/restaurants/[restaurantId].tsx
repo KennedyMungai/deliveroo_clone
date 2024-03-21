@@ -3,7 +3,7 @@ import ParallaxScrollView from '@/components/parallax-scroll-view'
 import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { Link, useNavigation } from 'expo-router'
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import {
 	Image,
 	ListRenderItem,
@@ -17,6 +17,8 @@ import {
 import Animated from 'react-native-reanimated'
 
 const RestaurantDetailsPage = () => {
+	const [activeIndex, setActiveIndex] = useState(0)
+
 	const navigation = useNavigation()
 
 	const DATA = restaurant.food.map((item, index) => ({
@@ -72,6 +74,10 @@ const RestaurantDetailsPage = () => {
 			)
 		})
 	}, [])
+
+	const selectCategory = (index: number) => {
+		setActiveIndex(index)
+	}
 
 	const renderItem: ListRenderItem<any> = ({ item, index }) => (
 		<Link href='/' asChild>
@@ -151,7 +157,11 @@ const RestaurantDetailsPage = () => {
 						{restaurant.food.map((item, index) => (
 							<TouchableOpacity
 								key={index}
-								style={styles.segmentButton}
+								style={
+									activeIndex === index
+										? styles.segmentButtonActive
+										: styles.segmentButton
+								}
 							>
 								<Text style={styles.segmentText}>
 									{item.category}
@@ -255,5 +265,6 @@ const styles = StyleSheet.create({
 	},
 	segmentsShadow: {},
 	segmentButton: {},
+	segmentButtonActive: {},
 	segmentText: {}
 })
