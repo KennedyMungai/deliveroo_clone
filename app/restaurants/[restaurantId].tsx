@@ -217,7 +217,19 @@ const RestaurantDetailsPage = () => {
 			{/* Footer Basket */}
 			{items > 0 && (
 				<View style={styles.footer}>
-					<View style={styles.footerBasket}></View>
+					<View style={styles.footerBasket}>
+						<Link href='/basket' asChild>
+							<TouchableOpacity style={styles.fullButton}>
+								<Text style={styles.basket}>{items}</Text>
+								<Text style={styles.footerText}>
+									View Basket
+								</Text>
+								<Text style={styles.basketTotal}>
+									Total: $ {total}
+								</Text>
+							</TouchableOpacity>
+						</Link>
+					</View>
 				</View>
 			)}
 		</>
@@ -369,6 +381,19 @@ const styles = StyleSheet.create({
 	footerBasket: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		alignItems: 'center'
+		alignItems: 'center',
+		gap: 12
+	},
+	footerText: {},
+	basket: {},
+	basketTotal: {},
+	fullButton: {
+		backgroundColor: Colors.primary,
+		padding: 16,
+		margin: 16,
+		borderRadius: 4,
+		alignItems: 'center',
+		flex: 1,
+		height: 56
 	}
 })
