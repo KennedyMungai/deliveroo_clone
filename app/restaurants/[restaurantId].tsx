@@ -104,6 +104,9 @@ const RestaurantDetailsPage = () => {
 						sections={DATA}
 						scrollEnabled={false}
 						keyExtractor={(item, index) => item + index.toString()}
+						renderSectionHeader={({
+							section: { title, index }
+						}) => <Text>TEST</Text>}
 						renderItem={({ item, index }) => (
 							<Text>{item.name}</Text>
 						)}
