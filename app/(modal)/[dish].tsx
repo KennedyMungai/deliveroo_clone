@@ -2,8 +2,9 @@ import { getDishById } from '@/assets/data/restaurant'
 import Colors from '@/constants/Colors'
 import { useLocalSearchParams } from 'expo-router'
 import React from 'react'
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Animated from 'react-native-reanimated'
 
 const DishDetailPage = () => {
 	const { dish: dishId } = useLocalSearchParams()
@@ -14,7 +15,7 @@ const DishDetailPage = () => {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<Image source={item?.img} style={styles.image} />
+			<Animated.Image source={item?.img} style={styles.image} />
 			<View style={styles.dishDetails}>
 				<Text style={styles.dishTitle}>{item?.name}</Text>
 				<Text style={styles.dishDescription}>{item?.info}</Text>
@@ -60,7 +61,15 @@ const styles = StyleSheet.create({
 		position: 'absolute',
 		bottom: 0,
 		left: 0,
-		width: '100%'
+		width: '100%',
+		elevation: 10,
+		shadowColor: 'black',
+		shadowOffset: {
+			width: 0,
+			height: -10
+		},
+		shadowOpacity: 0.1,
+		shadowRadius: 10
 	},
 	fullButton: {
 		backgroundColor: Colors.primary,
