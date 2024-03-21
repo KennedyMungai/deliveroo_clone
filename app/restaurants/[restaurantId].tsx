@@ -65,7 +65,12 @@ const RestaurantDetailsPage = () => {
 				contentBackgroundColor={Colors.lightGrey}
 				parallaxHeaderHeight={300}
 				stickyHeaderHeight={120}
-				renderBackground={() => <Image source={restaurant.img} />}
+				renderBackground={() => (
+					<Image
+						source={restaurant.img}
+						style={{ width: '100%', height: 300 }}
+					/>
+				)}
 				renderStickyHeader={() => (
 					<View key='sticky-header' style={styles.stickySection}>
 						<Text style={styles.stickySectionText}>
