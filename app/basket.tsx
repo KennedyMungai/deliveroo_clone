@@ -16,6 +16,12 @@ const BasketPage = () => {
 				<>
 					<FlatList
 						data={products}
+						ListHeaderComponent={() => (
+							<Text style={styles.section}>Items</Text>
+						)}
+						ItemSeparatorComponent={() => (
+							<View style={styles.separator} />
+						)}
 						renderItem={({ item }) => (
 							<View style={styles.row}>
 								<Text style={{ color: Colors.primary }}>
@@ -27,6 +33,11 @@ const BasketPage = () => {
 								<Text style={{ color: 'tomato', fontSize: 18 }}>
 									$ {item.price * item.quantity}
 								</Text>
+							</View>
+						)}
+						ListFooterComponent={() => (
+							<View>
+								<View style={styles.totalRow}></View>
 							</View>
 						)}
 					/>
@@ -48,6 +59,21 @@ const styles = StyleSheet.create({
 	row: {
 		flexDirection: 'row',
 		padding: 10,
-		gap: 20
+		gap: 20,
+		alignItems: 'center'
+	},
+	section: {
+		fontSize: 20,
+		fontWeight: 'bold',
+		margin: 10
+	},
+	separator: {
+		height: 1,
+		backgroundColor: Colors.grey
+	},
+	totalRow: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		padding: 10
 	}
 })
