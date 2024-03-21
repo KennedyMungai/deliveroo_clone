@@ -152,7 +152,7 @@ const RestaurantDetailsPage = () => {
 					<ScrollView
 						horizontal
 						showsHorizontalScrollIndicator={false}
-						contentContainerStyle={{ paddingHorizontal: 16 }}
+						contentContainerStyle={styles.segmentScrollView}
 					>
 						{restaurant.food.map((item, index) => (
 							<TouchableOpacity
@@ -276,6 +276,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		paddingTop: 10,
 		shadowColor: 'black',
+		shadowRadius: 4,
 		shadowOffset: {
 			width: 0,
 			height: 4
@@ -303,5 +304,9 @@ const styles = StyleSheet.create({
 		fontWeight: '600',
 		fontSize: 16,
 		paddingVertical: 4
+	},
+	segmentScrollView: {
+		paddingHorizontal: 16,
+		alignItems: 'center'
 	}
 })
