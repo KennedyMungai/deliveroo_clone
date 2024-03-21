@@ -13,7 +13,7 @@ const DishDetailPage = () => {
 
 	const router = useRouter()
 
-	const item = getDishById(+dishId)
+	const item = getDishById(+dishId)!
 
 	const { addProduct, clearCart, items, products, reduceProduct, total } =
 		useBasketStore()

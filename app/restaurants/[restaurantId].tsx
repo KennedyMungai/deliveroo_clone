@@ -1,6 +1,7 @@
 import { restaurant } from '@/assets/data/restaurant'
 import ParallaxScrollView from '@/components/parallax-scroll-view'
 import Colors from '@/constants/Colors'
+import useBasketStore from '@/store/basket-store'
 import { Ionicons } from '@expo/vector-icons'
 import { Link, useNavigation } from 'expo-router'
 import React, { useLayoutEffect, useRef, useState } from 'react'
@@ -38,6 +39,8 @@ const RestaurantDetailsPage = () => {
 		data: item.meals,
 		index
 	}))
+
+	const { items, total } = useBasketStore()
 
 	const onScroll = (event: any) => {
 		const y = event.nativeEvent.contentOffset.y
