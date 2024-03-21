@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		padding: 16,
 		lineHeight: 22,
-		fontWeight: '500'
+		fontWeight: '500',
+		color: Colors.medium
 	}
 })
