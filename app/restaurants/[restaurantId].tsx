@@ -216,7 +216,8 @@ const styles = StyleSheet.create({
 	},
 	dishInfo: {
 		fontSize: 14,
-		color: Colors.medium
+		color: Colors.medium,
+		paddingVertical: 4
 	},
 	dishPrice: {
 		fontSize: 14
