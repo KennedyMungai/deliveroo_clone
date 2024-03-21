@@ -1,7 +1,9 @@
 import { getDishById } from '@/assets/data/restaurant'
+import Colors from '@/constants/Colors'
 import { useLocalSearchParams } from 'expo-router'
 import React from 'react'
 import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const DishDetailPage = () => {
 	const { dish: dishId } = useLocalSearchParams()
@@ -14,6 +16,16 @@ const DishDetailPage = () => {
 			<View style={styles.dishDetails}>
 				<Text style={styles.dishTitle}>{item?.name}</Text>
 				<Text style={styles.dishDescription}>{item?.info}</Text>
+			</View>
+
+			<View style={styles.footer}>
+				<View>
+					<TouchableOpacity style={styles.fullButton}>
+						<Text style={styles.footerText}>
+							Add for {item?.price}
+						</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		</SafeAreaView>
 	)
@@ -32,7 +44,7 @@ const styles = StyleSheet.create({
 	},
 	dishDetails: {
 		flex: 1,
-		backgroundColor: '#FF885570',
+		backgroundColor: Colors.lightGrey,
 		paddingHorizontal: 10,
 		paddingVertical: 20
 	},
@@ -43,6 +55,22 @@ const styles = StyleSheet.create({
 	},
 	dishDescription: {
 		fontSize: 16,
-		fontWeight: '500'
+		fontWeight: '500',
+		lineHeight: 22
+	},
+	footer: {},
+	fullButton: {
+		backgroundColor: Colors.primary,
+		padding: 16,
+		margin: 16,
+		borderRadius: 4,
+		alignItems: 'center',
+		flex: 1,
+		height: 56
+	},
+	footerText: {
+		color: 'white',
+		fontSize: 16,
+		fontWeight: 'bold'
 	}
 })
