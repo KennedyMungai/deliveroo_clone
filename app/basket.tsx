@@ -19,6 +19,7 @@ const BasketPage = () => {
 							<View style={styles.row}>
 								<Text>{item.quantity} x </Text>
 								<Text>{item.name}</Text>
+								<Text>$ {item.price * item.quantity}</Text>
 							</View>
 						)}
 					/>
