@@ -73,10 +73,10 @@ const RestaurantDetailsPage = () => {
 
 	const renderItem: ListRenderItem<any> = ({ item, index }) => (
 		<Link href='/' asChild>
-			<View style={styles.renderItem}>
+			<TouchableOpacity style={styles.renderItem}>
 				<Text>{item.name}</Text>
 				<Text>$ {item.price}</Text>
-			</View>
+			</TouchableOpacity>
 		</Link>
 	)
 
