@@ -140,6 +140,7 @@ const RestaurantDetailsPage = () => {
 					/>
 				</View>
 			</ParallaxScrollView>
+
 			<Animated.View style={[styles.stickySegments]}>
 				<View style={styles.segmentsShadow}>
 					<ScrollView
@@ -148,8 +149,13 @@ const RestaurantDetailsPage = () => {
 						contentContainerStyle={{ paddingHorizontal: 16 }}
 					>
 						{restaurant.food.map((item, index) => (
-							<TouchableOpacity key={index}>
-								<Text>{item.category}</Text>
+							<TouchableOpacity
+								key={index}
+								style={styles.segmentButton}
+							>
+								<Text style={styles.segmentText}>
+									{item.category}
+								</Text>
 							</TouchableOpacity>
 						))}
 					</ScrollView>
@@ -247,5 +253,7 @@ const styles = StyleSheet.create({
 		top: 100,
 		backgroundColor: 'white'
 	},
-	segmentsShadow: {}
+	segmentsShadow: {},
+	segmentButton: {},
+	segmentText: {}
 })
