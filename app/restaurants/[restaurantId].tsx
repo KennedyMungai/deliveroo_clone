@@ -25,6 +25,34 @@ const RestaurantDetailsPage = () => {
 						color={Colors.primary}
 					/>
 				</TouchableOpacity>
+			),
+			headerRight: () => (
+				<View style={styles.headerRightStyles}>
+					<TouchableOpacity
+						onPress={() =>
+							console.log('Functionality to be implemented')
+						}
+						style={styles.roundButton}
+					>
+						<Ionicons
+							name='share-outline'
+							size={24}
+							color={Colors.primary}
+						/>
+					</TouchableOpacity>
+					<TouchableOpacity
+						onPress={() =>
+							console.log('Functionality to be implemented')
+						}
+						style={styles.roundButton}
+					>
+						<Ionicons
+							name='search-outline'
+							size={24}
+							color={Colors.primary}
+						/>
+					</TouchableOpacity>
+				</View>
 			)
 		})
 	}, [])
@@ -72,6 +100,12 @@ const styles = StyleSheet.create({
 		height: 40,
 		borderRadius: 20,
 		backgroundColor: '#FFFFFF90',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	headerRightStyles: {
+		flexDirection: 'row',
+		gap: 10,
 		alignItems: 'center',
 		justifyContent: 'center'
 	}
