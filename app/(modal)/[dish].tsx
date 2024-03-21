@@ -1,5 +1,6 @@
 import { getDishById } from '@/assets/data/restaurant'
 import Colors from '@/constants/Colors'
+import * as Haptics from 'expo-haptics'
 import { useLocalSearchParams } from 'expo-router'
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
@@ -11,7 +12,9 @@ const DishDetailPage = () => {
 
 	const item = getDishById(+dishId)
 
-	const addToCart = () => {}
+	const addToCart = () => {
+		Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
+	}
 
 	return (
 		<SafeAreaView style={styles.container}>
