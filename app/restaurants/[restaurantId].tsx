@@ -384,7 +384,11 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		gap: 12
 	},
-	footerText: {},
+	footerText: {
+		color: 'white',
+		fontWeight: 'bold',
+		fontSize: 16
+	},
 	basket: {},
 	basketTotal: {},
 	fullButton: {
@@ -394,6 +398,8 @@ const styles = StyleSheet.create({
 		borderRadius: 4,
 		alignItems: 'center',
 		flex: 1,
-		height: 56
+		height: 56,
+		flexDirection: 'row',
+		justifyContent: 'space-between'
 	}
 })
