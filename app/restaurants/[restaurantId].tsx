@@ -1,11 +1,21 @@
 import ParallaxScrollView from '@/components/parallax-scroll-view'
+import Colors from '@/constants/Colors'
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 const RestaurantDetailsPage = () => {
 	return (
 		<>
-			<ParallaxScrollView />
+			<ParallaxScrollView
+				style={{ flex: 1 }}
+				backgroundColor='white'
+				contentBackgroundColor={Colors.lightGrey}
+				parallaxHeaderHeight={300}
+			>
+				<View style={{ height: 500 }}>
+					<Text>Details</Text>
+				</View>
+			</ParallaxScrollView>
 		</>
 	)
 }
