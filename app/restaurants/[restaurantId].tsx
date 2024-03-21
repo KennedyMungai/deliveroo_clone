@@ -163,7 +163,13 @@ const RestaurantDetailsPage = () => {
 										: styles.segmentButton
 								}
 							>
-								<Text style={styles.segmentText}>
+								<Text
+									style={
+										activeIndex === index
+											? styles.segmentActiveText
+											: styles.segmentText
+									}
+								>
 									{item.category}
 								</Text>
 							</TouchableOpacity>
@@ -264,7 +270,25 @@ const styles = StyleSheet.create({
 		backgroundColor: 'white'
 	},
 	segmentsShadow: {},
-	segmentButton: {},
-	segmentButtonActive: {},
-	segmentText: {}
+	segmentButton: {
+		borderRadius: 50,
+		paddingHorizontal: 16
+	},
+	segmentButtonActive: {
+		backgroundColor: Colors.primary,
+		paddingHorizontal: 16,
+		borderRadius: 50
+	},
+	segmentText: {
+		fontSize: 16,
+		paddingVertical: 4,
+		fontWeight: '600',
+		color: Colors.primary
+	},
+	segmentActiveText: {
+		color: 'white',
+		fontWeight: '600',
+		fontSize: 16,
+		paddingVertical: 4
+	}
 })
