@@ -60,7 +60,7 @@ const RestaurantDetailsPage = () => {
 	return (
 		<>
 			<ParallaxScrollView
-				style={{ flex: 1 }}
+				style={{ flex: 1, paddingHorizontal: 10 }}
 				backgroundColor='white'
 				contentBackgroundColor={Colors.lightGrey}
 				parallaxHeaderHeight={300}
@@ -80,7 +80,10 @@ const RestaurantDetailsPage = () => {
 				)}
 			>
 				<View style={styles.detailsContainer}>
-					<Text>Details</Text>
+					<Text style={styles.restaurantName}>{restaurant.name}</Text>
+					<Text style={styles.restaurantDeliveryTime}>
+						{restaurant.delivery} . {restaurant.tags.join(' . ')}
+					</Text>
 				</View>
 			</ParallaxScrollView>
 		</>
@@ -120,5 +123,12 @@ const styles = StyleSheet.create({
 	stickySectionText: {
 		fontSize: 20,
 		margin: 10
-	}
+	},
+	restaurantName: {
+		fontSize: 30,
+		fontWeight: '600',
+		margin: 16
+	},
+	restaurantDescription: {},
+	restaurantDeliveryTime: {}
 })
