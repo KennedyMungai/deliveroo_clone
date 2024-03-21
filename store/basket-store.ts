@@ -17,7 +17,7 @@ export interface BasketState {
 	total: number
 }
 
-const useBasketStore = create<BasketState>((set) => ({
+export const useBasketStore = create<BasketState>((set) => ({
 	products: [],
 	items: 0,
 	total: 0,
