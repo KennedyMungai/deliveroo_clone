@@ -18,7 +18,7 @@ const BasketPage = () => {
 						renderItem={({ item }) => (
 							<View style={styles.row}>
 								<Text>{item.quantity} x </Text>
-								<Text>{item.name}</Text>
+								<Text style={{ flex: 1 }}>{item.name}</Text>
 								<Text>$ {item.price * item.quantity}</Text>
 							</View>
 						)}
