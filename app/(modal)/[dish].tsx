@@ -29,7 +29,7 @@ const DishDetailPage = () => {
 				</Animated.Text>
 				<Animated.Text
 					style={styles.dishDescription}
-					entering={FadeInLeft.duration(400).delay(200)}
+					entering={FadeInLeft.duration(400).delay(400)}
 				>
 					{item?.info}
 				</Animated.Text>
