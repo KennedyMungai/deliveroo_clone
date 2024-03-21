@@ -102,7 +102,7 @@ const RestaurantDetailsPage = () => {
 
 		setActiveIndex(index)
 
-		selected.measure((x, y, width, height, pageX, pageY) => {
+		selected.measure((x) => {
 			scrollRef.current?.scrollTo({ x: x - 16, y: 0, animated: true })
 		})
 	}
