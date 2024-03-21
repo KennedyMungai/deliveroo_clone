@@ -75,29 +75,29 @@ const MainAppLayout = () => {
 							headerTitle: 'Restaurant Details'
 						}}
 					/>
+					<Stack.Screen
+						name='(modal)/dish'
+						options={{
+							presentation: 'containedModal',
+							animation: 'slide_from_bottom',
+							animationDuration: 300,
+							headerTitle: 'Dish Details',
+							headerTransparent: true,
+							headerLeft: () => (
+								<TouchableOpacity
+									onPress={() => navigation.goBack()}
+								>
+									<Ionicons
+										name='close-outline'
+										size={24}
+										color={Colors.primary}
+										style={{ marginRight: 20 }}
+									/>
+								</TouchableOpacity>
+							)
+						}}
+					/>
 				</Stack>
-				<Stack.Screen
-					name='(modal)/dish'
-					options={{
-						presentation: 'containedModal',
-						animation: 'slide_from_bottom',
-						animationDuration: 300,
-						headerTitle: 'Dish Details',
-						headerTransparent: true,
-						headerLeft: () => (
-							<TouchableOpacity
-								onPress={() => navigation.goBack()}
-							>
-								<Ionicons
-									name='close-outline'
-									size={24}
-									color={Colors.primary}
-									style={{ marginRight: 20 }}
-								/>
-							</TouchableOpacity>
-						)
-					}}
-				/>
 			</BottomSheetModalProvider>
 		</GestureHandlerRootView>
 	)
