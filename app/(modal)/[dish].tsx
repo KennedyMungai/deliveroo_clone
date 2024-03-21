@@ -10,6 +10,8 @@ const DishDetailPage = () => {
 
 	const item = getDishById(+dishId)
 
+	const addToCart = () => {}
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<Image source={item?.img} style={styles.image} />
@@ -19,13 +21,9 @@ const DishDetailPage = () => {
 			</View>
 
 			<View style={styles.footer}>
-				<View>
-					<TouchableOpacity style={styles.fullButton}>
-						<Text style={styles.footerText}>
-							Add for {item?.price}
-						</Text>
-					</TouchableOpacity>
-				</View>
+				<TouchableOpacity style={styles.fullButton} onPress={addToCart}>
+					<Text style={styles.footerText}>Add for {item?.price}</Text>
+				</TouchableOpacity>
 			</View>
 		</SafeAreaView>
 	)
@@ -58,7 +56,12 @@ const styles = StyleSheet.create({
 		fontWeight: '500',
 		lineHeight: 22
 	},
-	footer: {},
+	footer: {
+		position: 'absolute',
+		bottom: 0,
+		left: 0,
+		width: '100%'
+	},
 	fullButton: {
 		backgroundColor: Colors.primary,
 		padding: 16,
