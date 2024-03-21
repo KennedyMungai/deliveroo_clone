@@ -1,6 +1,7 @@
 import useBasketStore from '@/store/basket-store'
 import React, { useState } from 'react'
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import Colors from '@/constants/Colors'
 
 const BasketPage = () => {
 	const [order, setOrder] = useState(false)
@@ -17,7 +18,9 @@ const BasketPage = () => {
 						data={products}
 						renderItem={({ item }) => (
 							<View style={styles.row}>
-								<Text>{item.quantity} x </Text>
+								<Text style={{ color: Colors.primary }}>
+									{item.quantity} x{' '}
+								</Text>
 								<Text style={{ flex: 1, fontSize: 18 }}>
 									{item.name}
 								</Text>
