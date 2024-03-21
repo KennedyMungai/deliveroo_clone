@@ -82,12 +82,11 @@ const RestaurantDetailsPage = () => {
 					}}
 				>
 					<Text style={{ fontWeight: '600' }}>{item.name}</Text>
-					<Text style={{ fontWeight: '600' }}>$ {item.price}</Text>
+					<Text style={{ fontWeight: '600', color: Colors.medium }}>
+						$ {item.price}
+					</Text>
 				</View>
-				<Image
-					source={item.img}
-					style={{ width: 80, height: 80, borderRadius: 40 }}
-				/>
+				<Image source={item.img} style={styles.dishImage} />
 			</TouchableOpacity>
 		</Link>
 	)
@@ -204,5 +203,10 @@ const styles = StyleSheet.create({
 		marginHorizontal: 16,
 		marginVertical: 8,
 		alignItems: 'center'
+	},
+	dishImage: {
+		width: 80,
+		height: 80,
+		borderRadius: 40
 	}
 })
