@@ -1,7 +1,7 @@
 import { getDishById } from '@/assets/data/restaurant'
 import Colors from '@/constants/Colors'
 import * as Haptics from 'expo-haptics'
-import { useLocalSearchParams } from 'expo-router'
+import { useLocalSearchParams, useRouter } from 'expo-router'
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -10,10 +10,13 @@ import Animated, { FadeIn, FadeInLeft } from 'react-native-reanimated'
 const DishDetailPage = () => {
 	const { dish: dishId } = useLocalSearchParams()
 
+	const router = useRouter()
+
 	const item = getDishById(+dishId)
 
 	const addToCart = () => {
 		Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
+		router.back()
 	}
 
 	return (
