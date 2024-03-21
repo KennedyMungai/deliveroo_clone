@@ -269,7 +269,10 @@ const styles = StyleSheet.create({
 		top: 100,
 		backgroundColor: 'white'
 	},
-	segmentsShadow: {},
+	segmentsShadow: {
+		justifyContent: 'center',
+		paddingTop: 10
+	},
 	segmentButton: {
 		borderRadius: 50,
 		paddingHorizontal: 16
