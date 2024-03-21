@@ -4,10 +4,23 @@ import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from 'expo-router'
 import React, { useLayoutEffect } from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import {
+	Image,
+	SectionList,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
+} from 'react-native'
 
 const RestaurantDetailsPage = () => {
 	const navigation = useNavigation()
+
+	const DATA = restaurant.food.map((item, index) => ({
+		title: item.category,
+		data: item.meals,
+		index
+	}))
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
@@ -87,6 +100,14 @@ const RestaurantDetailsPage = () => {
 					<Text style={styles.restaurantDescription}>
 						{restaurant.about}
 					</Text>
+					<SectionList
+						sections={DATA}
+						scrollEnabled={false}
+						keyExtractor={(item, index) => item + index.toString()}
+						renderItem={({ item, index }) => (
+							<Text>{item.name}</Text>
+						)}
+					/>
 				</View>
 			</ParallaxScrollView>
 		</>
