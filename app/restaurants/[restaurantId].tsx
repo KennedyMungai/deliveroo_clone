@@ -239,6 +239,13 @@ const styles = StyleSheet.create({
 	dishPrice: {
 		fontSize: 14
 	},
-	stickySegments: {},
+	stickySegments: {
+		position: 'absolute',
+		height: 50,
+		left: 0,
+		right: 0,
+		top: 100,
+		backgroundColor: 'white'
+	},
 	segmentsShadow: {}
 })
