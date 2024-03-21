@@ -74,8 +74,16 @@ const RestaurantDetailsPage = () => {
 	const renderItem: ListRenderItem<any> = ({ item, index }) => (
 		<Link href='/' asChild>
 			<TouchableOpacity style={styles.renderItem}>
-				<Text style={{ fontWeight: '600' }}>{item.name}</Text>
-				<Text style={{ fontWeight: '600' }}>$ {item.price}</Text>
+				<View
+					style={{
+						flex: 1,
+						flexDirection: 'row',
+						justifyContent: 'space-between'
+					}}
+				>
+					<Text style={{ fontWeight: '600' }}>{item.name}</Text>
+					<Text style={{ fontWeight: '600' }}>$ {item.price}</Text>
+				</View>
 			</TouchableOpacity>
 		</Link>
 	)
