@@ -17,7 +17,7 @@ export interface BasketState {
 	total: number
 }
 
-export const useBasketStore = create<BasketState>((set) => ({
+const useBasketStore = create<BasketState>((set) => ({
 	products: [],
 	items: 0,
 	total: 0,
@@ -58,3 +58,5 @@ export const useBasketStore = create<BasketState>((set) => ({
 	},
 	clearCart: () => set({ products: [], items: 0, total: 0 })
 }))
+
+export default useBasketStore
