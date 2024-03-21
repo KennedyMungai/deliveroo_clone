@@ -16,7 +16,8 @@ import {
 } from 'react-native'
 import Animated, {
 	useAnimatedStyle,
-	useSharedValue
+	useSharedValue,
+	withTiming
 } from 'react-native-reanimated'
 
 const RestaurantDetailsPage = () => {
@@ -39,9 +40,9 @@ const RestaurantDetailsPage = () => {
 		const y = event.nativeEvent.contentOffset.y
 
 		if (y > 350) {
-			opacity: 1
+			opacity.value = withTiming(1)
 		} else {
-			opacity: 0
+			opacity.value = withTiming(0)
 		}
 	}
 
