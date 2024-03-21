@@ -162,6 +162,7 @@ const RestaurantDetailsPage = () => {
 										? styles.segmentButtonActive
 										: styles.segmentButton
 								}
+								onPress={() => selectCategory(index)}
 							>
 								<Text
 									style={
