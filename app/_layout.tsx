@@ -76,7 +76,7 @@ const MainAppLayout = () => {
 						}}
 					/>
 					<Stack.Screen
-						name='(modal)/dish'
+						name='(modal)/[dish]'
 						options={{
 							presentation: 'containedModal',
 							animation: 'slide_from_bottom',
