@@ -104,9 +104,10 @@ const RestaurantDetailsPage = () => {
 						sections={DATA}
 						scrollEnabled={false}
 						keyExtractor={(item, index) => item + index.toString()}
+						style={styles.scrollSection}
 						renderSectionHeader={({
 							section: { title, index }
-						}) => <Text>{title}</Text>}
+						}) => <Text style={styles.sectionHeader}>{title}</Text>}
 						renderItem={({ item, index }) => (
 							<Text>{item.name}</Text>
 						)}
@@ -162,5 +163,13 @@ const styles = StyleSheet.create({
 		lineHeight: 22,
 		fontWeight: '500',
 		color: Colors.medium
+	},
+	sectionHeader: {
+		fontSize: 22,
+		fontWeight: 'bold',
+		marginTop: 40
+	},
+	scrollSection: {
+		paddingBottom: 50
 	}
 })
