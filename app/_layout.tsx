@@ -53,6 +53,15 @@ const MainAppLayout = () => {
 							headerLeft: () => (
 								<TouchableOpacity
 									onPress={() => navigation.goBack()}
+									style={{
+										backgroundColor: '#FFFFFF80',
+										height: 40,
+										width: 40,
+										borderRadius: 20,
+										alignItems: 'center',
+										justifyContent: 'center',
+										marginRight: 20
+									}}
 								>
 									<Ionicons
 										name='close-outline'
@@ -86,12 +95,20 @@ const MainAppLayout = () => {
 							headerLeft: () => (
 								<TouchableOpacity
 									onPress={() => navigation.goBack()}
+									style={{
+										backgroundColor: '#FFFFFF80',
+										height: 40,
+										width: 40,
+										borderRadius: 20,
+										alignItems: 'center',
+										justifyContent: 'center',
+										marginRight: 20
+									}}
 								>
 									<Ionicons
 										name='close-outline'
 										size={24}
 										color={Colors.primary}
-										style={{ marginRight: 20 }}
 									/>
 								</TouchableOpacity>
 							)
