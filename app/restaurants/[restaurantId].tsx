@@ -14,18 +14,36 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
-import Animated from 'react-native-reanimated'
+import Animated, {
+	useAnimatedStyle,
+	useSharedValue
+} from 'react-native-reanimated'
 
 const RestaurantDetailsPage = () => {
 	const [activeIndex, setActiveIndex] = useState(0)
 
 	const navigation = useNavigation()
 
+	const opacity = useSharedValue(0)
+	const animatedStyles = useAnimatedStyle(() => ({
+		opacity: opacity.value
+	}))
+
 	const DATA = restaurant.food.map((item, index) => ({
 		title: item.category,
 		data: item.meals,
 		index
 	}))
+
+	const onScroll = (event: any) => {
+		const y = event.nativeEvent.contentOffset.y
+
+		if (y > 350) {
+			opacity: 1
+		} else {
+			opacity: 0
+		}
+	}
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
@@ -103,6 +121,7 @@ const RestaurantDetailsPage = () => {
 		<>
 			<ParallaxScrollView
 				style={{ flex: 1, paddingHorizontal: 10 }}
+				scrollEvent={onScroll}
 				backgroundColor='white'
 				contentBackgroundColor={Colors.lightGrey}
 				parallaxHeaderHeight={300}
@@ -147,7 +166,7 @@ const RestaurantDetailsPage = () => {
 				</View>
 			</ParallaxScrollView>
 
-			<Animated.View style={[styles.stickySegments]}>
+			<Animated.View style={[animatedStyles, styles.stickySegments]}>
 				<View style={styles.segmentsShadow}>
 					<ScrollView
 						horizontal
