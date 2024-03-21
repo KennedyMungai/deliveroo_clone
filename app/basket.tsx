@@ -37,7 +37,14 @@ const BasketPage = () => {
 						)}
 						ListFooterComponent={() => (
 							<View>
-								<View style={styles.totalRow}></View>
+								<View style={styles.totalRow}>
+									<Text style={styles.subtotalText}>
+										Subtotal:
+									</Text>
+									<Text style={styles.subtotalAmount}>
+										{total}
+									</Text>
+								</View>
 							</View>
 						)}
 					/>
@@ -74,6 +81,14 @@ const styles = StyleSheet.create({
 	totalRow: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		padding: 10
+		padding: 10,
+		alignItems: 'center'
+	},
+	subtotalText: {
+		fontSize: 18
+	},
+	subtotalAmount: {
+		fontSize: 18,
+		color: Colors.primary
 	}
 })
