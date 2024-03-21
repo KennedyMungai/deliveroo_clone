@@ -114,6 +114,24 @@ const MainAppLayout = () => {
 							)
 						}}
 					/>
+					<Stack.Screen
+						name='basket'
+						options={{
+							headerTitle: 'Basket',
+							headerTransparent: true,
+							headerLeft: () => (
+								<TouchableOpacity
+									onPress={() => navigation.goBack()}
+								>
+									<Ionicons
+										name='arrow-back'
+										size={24}
+										color={Colors.primary}
+									/>
+								</TouchableOpacity>
+							)
+						}}
+					/>
 				</Stack>
 			</BottomSheetModalProvider>
 		</GestureHandlerRootView>
