@@ -17,6 +17,7 @@ const BasketPage = () => {
 						data={products}
 						renderItem={({ item }) => (
 							<View style={styles.row}>
+								<Text>{item.quantity} x </Text>
 								<Text>{item.name}</Text>
 							</View>
 						)}
@@ -37,6 +38,8 @@ const styles = StyleSheet.create({
 		paddingTop: 100
 	},
 	row: {
-		flexDirection: 'row'
+		flexDirection: 'row',
+		padding: 10,
+		gap: 20
 	}
 })
