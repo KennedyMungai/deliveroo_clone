@@ -106,6 +106,9 @@ const RestaurantDetailsPage = () => {
 						keyExtractor={(item, index) => item + index.toString()}
 						contentContainerStyle={{ paddingBottom: 50 }}
 						showsVerticalScrollIndicator={false}
+						SectionSeparatorComponent={() => (
+							<View style={styles.sectionSeparator} />
+						)}
 						renderSectionHeader={({
 							section: { title, index }
 						}) => <Text style={styles.sectionHeader}>{title}</Text>}
@@ -169,5 +172,9 @@ const styles = StyleSheet.create({
 		fontSize: 22,
 		fontWeight: 'bold',
 		marginTop: 40
+	},
+	sectionSeparator: {
+		borderWidth: 1,
+		borderColor: Colors.grey
 	}
 })
