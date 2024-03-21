@@ -396,7 +396,10 @@ const styles = StyleSheet.create({
 		borderRadius: 4,
 		fontWeight: 'bold'
 	},
-	basketTotal: {},
+	basketTotal: {
+		color: 'white',
+		fontWeight: 'bold'
+	},
 	fullButton: {
 		backgroundColor: Colors.primary,
 		padding: 16,
