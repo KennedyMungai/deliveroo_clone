@@ -81,7 +81,7 @@ const RestaurantDetailsPage = () => {
 			>
 				<View style={styles.detailsContainer}>
 					<Text style={styles.restaurantName}>{restaurant.name}</Text>
-					<Text style={styles.restaurantDeliveryTime}>
+					<Text style={styles.restaurantDescription}>
 						{restaurant.delivery} . {restaurant.tags.join(' . ')}
 					</Text>
 				</View>
@@ -122,13 +122,17 @@ const styles = StyleSheet.create({
 	},
 	stickySectionText: {
 		fontSize: 20,
-		margin: 10
+		padding: 10
 	},
 	restaurantName: {
 		fontSize: 30,
 		fontWeight: '600',
-		margin: 16
+		padding: 16
 	},
-	restaurantDescription: {},
-	restaurantDeliveryTime: {}
+	restaurantDescription: {
+		fontSize: 16,
+		padding: 16,
+		lineHeight: 22,
+		fontWeight: '500'
+	}
 })
