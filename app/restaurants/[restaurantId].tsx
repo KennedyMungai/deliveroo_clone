@@ -268,7 +268,9 @@ const styles = StyleSheet.create({
 		left: 0,
 		right: 0,
 		top: 100,
-		backgroundColor: 'white'
+		backgroundColor: 'white',
+		overflow: 'hidden',
+		paddingBottom: 4
 	},
 	segmentsShadow: {
 		justifyContent: 'center',
