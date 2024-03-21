@@ -7,12 +7,14 @@ import React, { useLayoutEffect } from 'react'
 import {
 	Image,
 	ListRenderItem,
+	ScrollView,
 	SectionList,
 	StyleSheet,
 	Text,
 	TouchableOpacity,
 	View
 } from 'react-native'
+import Animated from 'react-native-reanimated'
 
 const RestaurantDetailsPage = () => {
 	const navigation = useNavigation()
@@ -138,6 +140,21 @@ const RestaurantDetailsPage = () => {
 					/>
 				</View>
 			</ParallaxScrollView>
+			<Animated.View style={[styles.stickySegments]}>
+				<View style={styles.segmentsShadow}>
+					<ScrollView
+						horizontal
+						showsHorizontalScrollIndicator={false}
+						contentContainerStyle={{ paddingHorizontal: 16 }}
+					>
+						{restaurant.food.map((item, index) => (
+							<TouchableOpacity key={index}>
+								<Text>{item.category}</Text>
+							</TouchableOpacity>
+						))}
+					</ScrollView>
+				</View>
+			</Animated.View>
 		</>
 	)
 }
@@ -221,5 +238,7 @@ const styles = StyleSheet.create({
 	},
 	dishPrice: {
 		fontSize: 14
-	}
+	},
+	stickySegments: {},
+	segmentsShadow: {}
 })
