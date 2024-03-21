@@ -77,14 +77,14 @@ const RestaurantDetailsPage = () => {
 				<View
 					style={{
 						flex: 1,
-						flexDirection: 'row',
 						gap: 10
 					}}
 				>
-					<Text style={{ fontWeight: '600' }}>{item.name}</Text>
-					<Text style={{ fontWeight: '600', color: Colors.medium }}>
-						$ {item.price}
-					</Text>
+					<View>
+						<Text style={styles.dishName}>{item.name}</Text>
+						<Text style={styles.dishInfo}>{item.info}</Text>
+					</View>
+					<Text style={styles.dishPrice}>$ {item.price}</Text>
 				</View>
 				<Image source={item.img} style={styles.dishImage} />
 			</TouchableOpacity>
@@ -207,6 +207,18 @@ const styles = StyleSheet.create({
 	dishImage: {
 		width: 80,
 		height: 80,
-		borderRadius: 40
+		borderRadius: 40,
+		marginLeft: 10
+	},
+	dishName: {
+		fontSize: 16,
+		fontWeight: '600'
+	},
+	dishInfo: {
+		fontSize: 14,
+		color: Colors.medium
+	},
+	dishPrice: {
+		fontSize: 14
 	}
 })
