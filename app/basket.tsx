@@ -16,7 +16,7 @@ const BasketPage = () => {
 					<FlatList
 						data={products}
 						renderItem={({ item }) => (
-							<View>
+							<View style={styles.row}>
 								<Text>{item.name}</Text>
 							</View>
 						)}
@@ -35,5 +35,8 @@ const styles = StyleSheet.create({
 		backgroundColor: 'white',
 		paddingHorizontal: 10,
 		paddingTop: 100
+	},
+	row: {
+		flexDirection: 'row'
 	}
 })
