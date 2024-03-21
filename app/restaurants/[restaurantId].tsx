@@ -6,6 +6,7 @@ import { useNavigation } from 'expo-router'
 import React, { useLayoutEffect } from 'react'
 import {
 	Image,
+	ListRenderItem,
 	SectionList,
 	StyleSheet,
 	Text,
@@ -70,6 +71,13 @@ const RestaurantDetailsPage = () => {
 		})
 	}, [])
 
+	const renderItem: ListRenderItem<any> = ({ item, index }) => (
+		<View style={styles.renderItem}>
+			<Text>{item.name}</Text>
+			<Text>$ {item.price}</Text>
+		</View>
+	)
+
 	return (
 		<>
 			<ParallaxScrollView
@@ -78,6 +86,7 @@ const RestaurantDetailsPage = () => {
 				contentBackgroundColor={Colors.lightGrey}
 				parallaxHeaderHeight={300}
 				stickyHeaderHeight={120}
+				showsVerticalScrollIndicator={false}
 				renderBackground={() => (
 					<Image
 						source={restaurant.img}
@@ -112,9 +121,7 @@ const RestaurantDetailsPage = () => {
 						renderSectionHeader={({
 							section: { title, index }
 						}) => <Text style={styles.sectionHeader}>{title}</Text>}
-						renderItem={({ item, index }) => (
-							<Text>{item.name}</Text>
-						)}
+						renderItem={renderItem}
 					/>
 				</View>
 			</ParallaxScrollView>
@@ -176,5 +183,11 @@ const styles = StyleSheet.create({
 	sectionSeparator: {
 		borderWidth: 1,
 		borderColor: Colors.grey
+	},
+	renderItem: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		marginHorizontal: 16,
+		marginVertical: 8
 	}
 })
