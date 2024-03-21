@@ -105,6 +105,7 @@ const RestaurantDetailsPage = () => {
 						scrollEnabled={false}
 						keyExtractor={(item, index) => item + index.toString()}
 						contentContainerStyle={{ paddingBottom: 50 }}
+						showsVerticalScrollIndicator={false}
 						renderSectionHeader={({
 							section: { title, index }
 						}) => <Text style={styles.sectionHeader}>{title}</Text>}
