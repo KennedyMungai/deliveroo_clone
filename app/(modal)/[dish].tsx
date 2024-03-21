@@ -1,5 +1,6 @@
 import { getDishById } from '@/assets/data/restaurant'
 import Colors from '@/constants/Colors'
+import useBasketStore from '@/store/basket-store'
 import * as Haptics from 'expo-haptics'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import React from 'react'
@@ -14,8 +15,14 @@ const DishDetailPage = () => {
 
 	const item = getDishById(+dishId)
 
+	const { addProduct, clearCart, items, products, reduceProduct, total } =
+		useBasketStore()
+
 	const addToCart = () => {
 		Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
+
+		addProduct(item)
+
 		router.back()
 	}
 
