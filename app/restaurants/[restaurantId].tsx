@@ -2,7 +2,7 @@ import { restaurant } from '@/assets/data/restaurant'
 import ParallaxScrollView from '@/components/parallax-scroll-view'
 import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
-import { useNavigation } from 'expo-router'
+import { Link, useNavigation } from 'expo-router'
 import React, { useLayoutEffect } from 'react'
 import {
 	Image,
@@ -72,10 +72,12 @@ const RestaurantDetailsPage = () => {
 	}, [])
 
 	const renderItem: ListRenderItem<any> = ({ item, index }) => (
-		<View style={styles.renderItem}>
-			<Text>{item.name}</Text>
-			<Text>$ {item.price}</Text>
-		</View>
+		<Link href='/'>
+			<View style={styles.renderItem}>
+				<Text>{item.name}</Text>
+				<Text>$ {item.price}</Text>
+			</View>
+		</Link>
 	)
 
 	return (
