@@ -179,6 +179,7 @@ const RestaurantDetailsPage = () => {
 				</View>
 			</ParallaxScrollView>
 
+			{/* Sticky Segments */}
 			<Animated.View style={[animatedStyles, styles.stickySegments]}>
 				<View style={styles.segmentsShadow}>
 					<ScrollView
@@ -212,6 +213,13 @@ const RestaurantDetailsPage = () => {
 					</ScrollView>
 				</View>
 			</Animated.View>
+
+			{/* Footer Basket */}
+			{items > 0 && (
+				<View style={styles.footer}>
+					<View style={styles.footerBasket}></View>
+				</View>
+			)}
 		</>
 	)
 }
@@ -343,5 +351,24 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 16,
 		alignItems: 'center',
 		gap: 16
+	},
+	footer: {
+		position: 'absolute',
+		bottom: 0,
+		left: 0,
+		width: '100%',
+		elevation: 10,
+		shadowColor: 'black',
+		shadowOffset: {
+			width: 0,
+			height: -10
+		},
+		shadowOpacity: 0.1,
+		shadowRadius: 10
+	},
+	footerBasket: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center'
 	}
 })
