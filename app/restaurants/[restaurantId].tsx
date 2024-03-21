@@ -1,7 +1,8 @@
+import { restaurant } from '@/assets/data/restaurant'
 import ParallaxScrollView from '@/components/parallax-scroll-view'
 import Colors from '@/constants/Colors'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 
 const RestaurantDetailsPage = () => {
 	return (
@@ -11,8 +12,9 @@ const RestaurantDetailsPage = () => {
 				backgroundColor='white'
 				contentBackgroundColor={Colors.lightGrey}
 				parallaxHeaderHeight={300}
+				renderBackground={() => <Image source={restaurant.img} />}
 			>
-				<View style={{ height: 500 }}>
+				<View style={styles.detailsContainer}>
 					<Text>Details</Text>
 				</View>
 			</ParallaxScrollView>
@@ -27,5 +29,8 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: 'white',
 		paddingHorizontal: 10
+	},
+	detailsContainer: {
+		backgroundColor: Colors.lightGrey
 	}
 })
