@@ -4,7 +4,7 @@ import { useLocalSearchParams } from 'expo-router'
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import Animated from 'react-native-reanimated'
+import Animated, { FadeIn } from 'react-native-reanimated'
 
 const DishDetailPage = () => {
 	const { dish: dishId } = useLocalSearchParams()
@@ -15,7 +15,11 @@ const DishDetailPage = () => {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<Animated.Image source={item?.img} style={styles.image} />
+			<Animated.Image
+				source={item?.img}
+				style={styles.image}
+				entering={FadeIn.duration(500).delay(400)}
+			/>
 			<View style={styles.dishDetails}>
 				<Text style={styles.dishTitle}>{item?.name}</Text>
 				<Text style={styles.dishDescription}>{item?.info}</Text>
