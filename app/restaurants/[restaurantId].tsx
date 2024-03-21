@@ -64,13 +64,14 @@ const RestaurantDetailsPage = () => {
 				backgroundColor='white'
 				contentBackgroundColor={Colors.lightGrey}
 				parallaxHeaderHeight={300}
-				stickyHeaderHeight={50}
+				stickyHeaderHeight={120}
 				renderBackground={() => <Image source={restaurant.img} />}
 				renderStickyHeader={() => (
-					<View
-						key='sticky-header'
-						style={styles.stickySection}
-					></View>
+					<View key='sticky-header' style={styles.stickySection}>
+						<Text style={styles.stickySectionText}>
+							{restaurant.name}
+						</Text>
+					</View>
 				)}
 			>
 				<View style={styles.detailsContainer}>
@@ -93,7 +94,9 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.lightGrey
 	},
 	stickySection: {
-		backgroundColor: 'red'
+		marginLeft: 60,
+		height: 100,
+		justifyContent: 'flex-end'
 	},
 	roundButton: {
 		width: 40,
@@ -108,5 +111,9 @@ const styles = StyleSheet.create({
 		gap: 10,
 		alignItems: 'center',
 		justifyContent: 'center'
+	},
+	stickySectionText: {
+		fontSize: 20,
+		margin: 10
 	}
 })
