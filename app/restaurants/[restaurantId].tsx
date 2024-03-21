@@ -3,7 +3,7 @@ import ParallaxScrollView from '@/components/parallax-scroll-view'
 import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { Link, useNavigation } from 'expo-router'
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import {
 	Image,
 	ListRenderItem,
@@ -22,6 +22,9 @@ import Animated, {
 
 const RestaurantDetailsPage = () => {
 	const [activeIndex, setActiveIndex] = useState(0)
+
+	const scrollRef = useRef<ScrollView>(null)
+	const itemsRef = useRef<TouchableOpacity[]>([])
 
 	const navigation = useNavigation()
 
@@ -170,6 +173,7 @@ const RestaurantDetailsPage = () => {
 			<Animated.View style={[animatedStyles, styles.stickySegments]}>
 				<View style={styles.segmentsShadow}>
 					<ScrollView
+						ref={scrollRef}
 						horizontal
 						showsHorizontalScrollIndicator={false}
 						contentContainerStyle={styles.segmentScrollView}
@@ -183,6 +187,7 @@ const RestaurantDetailsPage = () => {
 										: styles.segmentButton
 								}
 								onPress={() => selectCategory(index)}
+								ref={(ref) => (itemsRef.current[index] = ref!)}
 							>
 								<Text
 									style={
