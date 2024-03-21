@@ -84,6 +84,9 @@ const RestaurantDetailsPage = () => {
 					<Text style={styles.restaurantDescription}>
 						{restaurant.delivery} . {restaurant.tags.join(' . ')}
 					</Text>
+					<Text style={styles.restaurantDescription}>
+						{restaurant.about}
+					</Text>
 				</View>
 			</ParallaxScrollView>
 		</>
