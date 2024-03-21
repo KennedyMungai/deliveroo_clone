@@ -1,6 +1,6 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
 import ParallaxScrollView from '@/components/parallax-scroll-view'
+import React from 'react'
+import { StyleSheet } from 'react-native'
 
 const RestaurantDetailsPage = () => {
 	return (
