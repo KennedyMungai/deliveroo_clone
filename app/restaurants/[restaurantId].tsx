@@ -108,7 +108,7 @@ const RestaurantDetailsPage = () => {
 	}
 
 	const renderItem: ListRenderItem<any> = ({ item, index }) => (
-		<Link href='/' asChild>
+		<Link href='/(modal)/dish' asChild>
 			<TouchableOpacity style={styles.renderItem}>
 				<View
 					style={{
