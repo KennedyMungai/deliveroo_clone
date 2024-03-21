@@ -21,7 +21,9 @@ const BasketPage = () => {
 								<Text style={{ flex: 1, fontSize: 18 }}>
 									{item.name}
 								</Text>
-								<Text>$ {item.price * item.quantity}</Text>
+								<Text style={{ color: 'tomato', fontSize: 18 }}>
+									$ {item.price * item.quantity}
+								</Text>
 							</View>
 						)}
 					/>
