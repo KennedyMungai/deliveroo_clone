@@ -78,12 +78,16 @@ const RestaurantDetailsPage = () => {
 					style={{
 						flex: 1,
 						flexDirection: 'row',
-						justifyContent: 'space-between'
+						gap: 10
 					}}
 				>
 					<Text style={{ fontWeight: '600' }}>{item.name}</Text>
 					<Text style={{ fontWeight: '600' }}>$ {item.price}</Text>
 				</View>
+				<Image
+					source={item.img}
+					style={{ width: 80, height: 80, borderRadius: 40 }}
+				/>
 			</TouchableOpacity>
 		</Link>
 	)
@@ -198,6 +202,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		marginHorizontal: 16,
-		marginVertical: 8
+		marginVertical: 8,
+		alignItems: 'center'
 	}
 })
