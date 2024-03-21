@@ -307,6 +307,7 @@ const styles = StyleSheet.create({
 	},
 	segmentScrollView: {
 		paddingHorizontal: 16,
-		alignItems: 'center'
+		alignItems: 'center',
+		gap: 16
 	}
 })
