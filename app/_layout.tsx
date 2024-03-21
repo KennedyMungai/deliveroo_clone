@@ -71,7 +71,7 @@ const MainAppLayout = () => {
 						options={{
 							animation: 'slide_from_right',
 							animationDuration: 300,
-							headerTransparent: true,
+							headerShadowVisible: false,
 							headerTitle: 'Restaurant Details'
 						}}
 					/>
