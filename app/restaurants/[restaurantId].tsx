@@ -389,7 +389,12 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		fontSize: 16
 	},
-	basket: {},
+	basket: {
+		color: 'white',
+		backgroundColor: '#19AA86',
+		padding: 8,
+		borderRadius: 4
+	},
 	basketTotal: {},
 	fullButton: {
 		backgroundColor: Colors.primary,
